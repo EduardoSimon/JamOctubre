@@ -41,7 +41,36 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="FSM.cs" t="Include" />
+          <e p="Core" t="Include">
+            <e p="SceneLoader.cs" t="Include" />
+            <e p="Singleton.cs" t="Include" />
+          </e>
+          <e p="FSM" t="Include">
+            <e p="ChangeConditions" t="Include">
+              <e p="Condition.cs" t="Include" />
+              <e p="DetectPlayerCondition.cs" t="Include" />
+              <e p="PlayerAliveCondition.cs" t="Include" />
+              <e p="TimeElapsedCondition.cs" t="Include" />
+            </e>
+            <e p="FSMSystem.cs" t="Include" />
+            <e p="NextStateInfo" t="Include">
+              <e p="NextStateInfo.cs" t="Include" />
+            </e>
+            <e p="NPCStatesBehaviour.cs" t="Include" />
+            <e p="States" t="Include">
+              <e p="State.cs" t="Include" />
+            </e>
+            <e p="SteeringBehaviours" t="Include">
+              <e p="ChaseSteeringBehaviour.cs" t="Include" />
+              <e p="MoveLastPositionPlayerSteeringBehaviour.cs" t="Include" />
+              <e p="PatrolSteeringBehaviour.cs" t="Include" />
+              <e p="RotateSteeringBehaviour.cs" t="Include" />
+              <e p="SteeringBehaviour.cs" t="Include" />
+            </e>
+            <e p="Transitions" t="Include">
+              <e p="Transition.cs" t="Include" />
+            </e>
+          </e>
         </e>
       </e>
       <e p="JamOctubreRepo.sln" t="IncludeFlat" />
