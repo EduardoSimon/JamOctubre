@@ -12,12 +12,18 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
 
     public State currentState;
     public List<Transition> currentTransitions;
+
+    public List<RoomProbability> roomProbabilities;
+    public bool roomSelected;
+    public bool destinationFixed;
+
     public void ActBehaviours()
     {
         if (currentState.behaviours != null)
         {
             foreach (SteeringBehaviour behaviour in currentState.behaviours)
             {
+                Debug.Log(behaviour.ToString());
                 behaviour.Act();
             }
         }
@@ -53,3 +59,11 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
         }
     }
 }
+
+[System.Serializable]
+public class RoomProbability{
+    public ROOM roomName;
+    public float probability;
+    public float cumulativeProbability;
+}
+
