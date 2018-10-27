@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerPrefs : MonoBehaviour {
+public class PlayerPrefsCustom : MonoBehaviour {
 
     public bool HasLevelEnd { get; set; }
 
@@ -25,8 +25,14 @@ public class PlayerPrefs : MonoBehaviour {
 
             UnityEngine.PlayerPrefs.SetInt("currentScore", ScoreManager.score);
 
-            //SceneManager.LoadScene("MenuJAMScore");
+            SceneManager.LoadScene((int)SceneLoader.SCENES.Score);
         }
+    }
+
+    private void OnGUI()
+    {
+        if (GUILayout.Button("End Level"))
+            HasLevelEnd = true;
     }
 
     private void LoadPlayerProgress()

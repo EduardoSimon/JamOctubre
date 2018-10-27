@@ -12,17 +12,22 @@ public class HUDController : Singleton<HUDController>
 	public GameObject alarmIcons;
 	public GameObject alarmIcon;
 	public Text score;
+	public AudioClip alarmClip;
+	public AudioClip addScoreClip;
 	
 	private Image[] scoreLevels;
 	private Image[] alarmImages;
 	private Sequence s;
 	private Image alarmImage;
+	private AudioSource _audioSource;
+	
 
 	private void Awake()
 	{
 		scoreLevels = billetes.GetComponentsInChildren<Image>();
 		alarmImages = alarmIcons.GetComponentsInChildren<Image>();
 		alarmImage = alarmIcon.GetComponentInChildren<Image>();
+		_audioSource = GetComponent<AudioSource>();
 		s = DOTween.Sequence();
 		
 		StartHud();
@@ -57,8 +62,8 @@ public class HUDController : Singleton<HUDController>
 
 	public void InitializeAlarmSprites()
 	{
-		//tween the alarm
-		//play the sound repeatidly
+		_audioSource.PlayOneShot(alarmClip);
+		
 		alarmImage.transform.DOShakePosition(0.5f, 5f, 40, 90f, false, true).SetLoops(-1);
 		s.AppendCallback(() => { alarmImages[0].enabled = true; });
 		//s.Append(alarmImages[0].transform.DOShakePosition(0.4f, 6f, 10, 90, false, true));
@@ -93,6 +98,10 @@ public class HUDController : Singleton<HUDController>
 		int.TryParse(score.text,out tempScore);
 		scoreValue += tempScore;
 		score.text = scoreValue.ToString();
+		
+		_audioSource.PlayOneShot(addScoreClip);
+		ScoreManager.score = scoreValue;
+		
 		
 		//Depending on the score add next level of money
 		foreach (var scoreLevel in scoreLevels)

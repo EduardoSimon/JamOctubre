@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum ROOM
 {
@@ -31,8 +32,16 @@ public class GameManager : Singleton<GameManager> {
         InitCoroutines();
     }
 
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += (scene, mode) =>
+        {
+            if (scene.buildIndex == (int) SceneLoader.SCENES.Game)
+                rooms = FindObjectsOfType<Room>();
+        };
+    }
+
     public void InitCoroutines(){
-        //StartCoroutine(IsPlayerDetected());
         StartCoroutine(IsLevelCompleted());
     }
 
@@ -52,13 +61,6 @@ public class GameManager : Singleton<GameManager> {
 
     public void SetRooms(Room[] rooms){
         this.rooms = rooms;
-    }
-
-    private void OnLevelWasLoaded(int level)
-    {
-        if(level == (int)SceneLoader.SCENES.Level1){
-            rooms = FindObjectsOfType<Room>();
-        }
     }
 
 }

@@ -191,6 +191,12 @@
               <e p="VolumeTextureData.cs" t="Include" />
             </e>
           </e>
+          <e p="Day-Night Skyboxes" t="Include">
+            <e p="README.txt" t="Include" />
+            <e p="Textures" t="Include">
+              <e p="Readme for Assigning.txt" t="Include" />
+            </e>
+          </e>
           <e p="Game Jam Template" t="Include">
             <e p="Fonts" t="Include">
               <e p="OpenSans" t="Include">
@@ -280,12 +286,12 @@
           <e p="Rotator.cs" t="Include" />
           <e p="StolableUI.cs" t="Include" />
           <e p="UI" t="Include">
-            <e p="_PlayerPrefs.cs" t="Include" />
             <e p="AudioManager.cs" t="Include" />
             <e p="HighestScore.cs" t="Include" />
             <e p="LevelLoader.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
             <e p="PauseMenu.cs" t="Include" />
+            <e p="PlayerPrefsCustom.cs" t="Include" />
             <e p="ScoreManager.cs" t="Include" />
           </e>
         </e>
