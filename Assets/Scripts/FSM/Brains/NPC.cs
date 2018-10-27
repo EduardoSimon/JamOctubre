@@ -10,6 +10,8 @@ using UnityEngine;
 [RequireComponent(typeof(FaceTowardsSteeringBehaviour))]
 [RequireComponent(typeof(PerformTalkingSteeringBehaviour))]
 [RequireComponent(typeof(StopNavMeshSteeringBehaviour))]
+[RequireComponent(typeof(GoToAlarmSteeringBehaviour))]
+
 public class NPC : NPCStatesBehaviour
 {
     private void Start()

@@ -7,26 +7,31 @@ public class FindOtherPersonCondition : Condition
     public float viewRadius = 3f;
     public LayerMask targetMask;
     public LayerMask obstacleMask;
+    public Transform currentTarget;
+
     public override bool Check()
     {
-        if (GetComponent<NPC>().canDetectNPC){
-            return FindNPC();
-        }
-        return false;
+
+        return FindNPC();
+
+        //return false;
 
     }
 
     public bool FindNPC(){
-
+        //currentTarget = null;
 
         Collider[] targetsInside = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         for (int i = 0; i < targetsInside.Length; i++)
         {
             Transform target = targetsInside[i].transform;
 
-            if (target.GetComponent<NPC>() != null && target.GetComponent<NPC>() != this.GetComponent<NPC>()){
+            if (this.GetComponent<NPC>().canDetectNPC && target.GetComponent<NPC>() != null &&
+                target.GetComponent<NPC>() != this.GetComponent<NPC>() && target.GetComponent<NPC>().canDetectNPC){
                 Debug.Log(this.name + " ha encontrado a " + target.name);
                 GetComponent<NPC>().canDetectNPC = false;
+                currentTarget = target;
+                target.GetComponent<NPC>().canDetectNPC = false;
                 return true;
             }
         }

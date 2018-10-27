@@ -25,13 +25,13 @@ public class HighestScore : MonoBehaviour {
 
     public void ResetHighestScore()
     {
-        PlayerPrefs.SetInt("highestScore", 0);
+        UnityEngine.PlayerPrefs.SetInt("highestScore", 0);
         SetHighestScoreText();
     }
 
     private void SetHighestScoreText()
     {
-        _highText.text = "" + PlayerPrefs.GetInt("highestScore");
-        _currentText.text = "" + PlayerPrefs.GetInt("currentScore");
+        _highText.text = "" + UnityEngine.PlayerPrefs.GetInt("highestScore");
+        _currentText.text = "" + UnityEngine.PlayerPrefs.GetInt("currentScore");
     }
 }

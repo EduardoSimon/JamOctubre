@@ -15,6 +15,7 @@ public class NextRoomReachedCondition : Condition
                 GetComponent<NPC>().roomSelected = false;
                 GetComponent<NPC>().destinationFixed = false;
                 GetComponent<NPC>().currentRoom = room;
+                GetComponent<GoToNextRoomSteeringBehaviour>().nextRoom.full = false;
                 GetComponent<GoToNextRoomSteeringBehaviour>().nextRoom = null;
                 return true;
             }

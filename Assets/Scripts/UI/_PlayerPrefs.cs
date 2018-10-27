@@ -3,33 +3,27 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class _PlayerPrefs : MonoBehaviour {
+public class PlayerPrefs : MonoBehaviour {
 
-    GameObject player;
-    float playerHealth;
+    public bool HasLevelEnd { get; set; }
 
-    private int highestScore;
+    public int Score { get; private set; }
 
     private void Awake()
     {
         LoadPlayerProgress();   
     }
-
-    private void Start()
-    {
-        player = GameObject.FindGameObjectWithTag("Player");
-    }
-
+    
     private void Update()
     {
-        if(playerHealth<= 0)
+        if(HasLevelEnd)
         {
-            if (ScoreManager.score > highestScore)
+            if (ScoreManager.score > Score)
             {
-                PlayerPrefs.SetInt("highestScore", ScoreManager.score);
+                UnityEngine.PlayerPrefs.SetInt("highestScore", ScoreManager.score);
             }
 
-            PlayerPrefs.SetInt("currentScore", ScoreManager.score);
+            UnityEngine.PlayerPrefs.SetInt("currentScore", ScoreManager.score);
 
             //SceneManager.LoadScene("MenuJAMScore");
         }
@@ -37,15 +31,11 @@ public class _PlayerPrefs : MonoBehaviour {
 
     private void LoadPlayerProgress()
     {
-        if (PlayerPrefs.HasKey("highestScore"))
+        if (UnityEngine.PlayerPrefs.HasKey("highestScore"))
         {
-            highestScore = PlayerPrefs.GetInt("highestScore");
+            Score = UnityEngine.PlayerPrefs.GetInt("highestScore");
         }
     }
 
-    public int GetHighestPlayerScore()
-    {
-        return highestScore;
-    }
 
 }
