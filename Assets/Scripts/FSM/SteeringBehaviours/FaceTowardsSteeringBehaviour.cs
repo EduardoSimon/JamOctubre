@@ -6,16 +6,7 @@ public class FaceTowardsSteeringBehaviour : SteeringBehaviour {
 
     public override void Act()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("FaceTowards action doing!");
     }
 
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

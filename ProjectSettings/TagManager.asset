@@ -3,8 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - AudioManager
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -15,7 +14,7 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - Interactable
+  - NPC
   - 
   - 
   - 
@@ -41,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Menu
-    uniqueID: 4282281489
-    locked: 0
-  - name: Modelo
-    uniqueID: 1413848793
     locked: 0
