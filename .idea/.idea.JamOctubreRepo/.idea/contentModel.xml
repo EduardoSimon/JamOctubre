@@ -22,7 +22,6 @@
             <e p="README.txt" t="Include" />
           </e>
         </e>
-        <e p="HouseSceneController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Aura" t="Include">
             <e p="Attributes" t="Include">
@@ -273,9 +272,13 @@
             </e>
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="HouseSceneController.cs" t="Include" />
+          <e p="HUDController.cs" t="Include" />
           <e p="InitGameManager.cs" t="Include" />
+          <e p="Parpadeo.cs" t="Include" />
           <e p="PlayerController.cs" t="Include" />
           <e p="Rotator.cs" t="Include" />
+          <e p="StolableUI.cs" t="Include" />
           <e p="UI" t="Include">
             <e p="_PlayerPrefs.cs" t="Include" />
             <e p="AudioManager.cs" t="Include" />
@@ -286,7 +289,6 @@
             <e p="ScoreManager.cs" t="Include" />
           </e>
         </e>
-        <e p="StolableUI.cs" t="Include" />
       </e>
       <e p="JamOctubreRepo.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
