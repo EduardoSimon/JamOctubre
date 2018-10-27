@@ -6,20 +6,12 @@ using System.Linq;
 public enum STATE
 {
     Default,
-    Attack,
-    Patrol,
+    ChangingRoom,
+    Talking,
     Idle,
-    Alert,
-    Recolocate,
+    GoingAlarm,
+    GoingShelter,
     None
-}
-
-public enum BEHAVIOUR
-{
-    Patrol,
-    Hit,
-    Shoot,
-    Rotate,
 }
 
 public class FSMSystem : Singleton<FSMSystem>{
