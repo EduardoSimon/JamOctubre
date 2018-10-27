@@ -68,7 +68,7 @@ public class PlayerController : Singleton<PlayerController> {
         }    
     }
 
-    void PickObject(Stolable item)
+    void PickObject(StolableUI item)
     {
         if (!isPlayingPickupAnimation)
         {
@@ -82,26 +82,30 @@ public class PlayerController : Singleton<PlayerController> {
         }
     }
 
-    private IEnumerator PickUpObjectSequence(Stolable item)
+    private IEnumerator PickUpObjectSequence(StolableUI item)
     {
         playerAnimator.SetTrigger("Pick");
         controller.enabled = false;
         canDetectInput = false;
+        item.OnInteractKeyPressed(InteractKeyCode);
 
-        while (true)
+        while (Input.GetKey(InteractKeyCode))
         {
-            yield return new WaitForSeconds(clip.length);
-            item.OnItemPickedUp();
             isPlayingPickupAnimation = false;
             controller.enabled = true;
             canDetectInput = true;
-            yield break;
+            yield return null;
         }
+
+        playerAnimator.SetTrigger("InterruptPick");
+        isPlayingPickupAnimation = false;
+        controller.enabled = true;
+        canDetectInput = true;    
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Stolable item = other.GetComponent<Stolable>();
+        StolableUI item = other.GetComponent<StolableUI>();
 
         if (item != null)
         {
