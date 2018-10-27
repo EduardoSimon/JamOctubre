@@ -31,7 +31,7 @@ public class _PlayerPrefs : MonoBehaviour {
 
             PlayerPrefs.SetInt("currentScore", ScoreManager.score);
 
-            SceneManager.LoadScene("MenuJAMScore");
+            //SceneManager.LoadScene("MenuJAMScore");
         }
     }
 

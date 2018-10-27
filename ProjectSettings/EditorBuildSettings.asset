@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/MenuBueno.unity
+    path: Assets/Scenes/GameLoop/MenuBueno.unity
     guid: 61ea6c56b78979e43be44fd233b24c9a
   - enabled: 1
-    path: Assets/Scenes/Oscar.unity
+    path: Assets/Scenes/GameLoop/Oscar.unity
     guid: c6f2f2adadcd80048be8ac72e1636983
+  - enabled: 1
+    path: Assets/Scenes/GameLoop/Score.unity
+    guid: a53c0ffecb941f24984df0537c3a61d1
   m_configObjects: {}
