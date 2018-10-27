@@ -7,13 +7,12 @@ public class SceneLoader : Singleton<SceneLoader>
 {
     public enum SCENES
     {
-        Menu = 0,
-        Options = 1,
-        Credits = 2,
-        Level1 = 3
+        MenuBueno = 0,
+        Game = 1,
+        Score = 2,
     }
 
-    public SCENES currentScene = SCENES.Menu;
+    public SCENES currentScene = SCENES.MenuBueno;
     
     public void LoadScene(SCENES sceneToLoad)
     {

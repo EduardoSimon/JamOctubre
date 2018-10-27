@@ -126,7 +126,7 @@ public class NPC : NPCStatesBehaviour
 
     private void OnLevelWasLoaded(int level)
     {
-        if (level == (int)SceneLoader.SCENES.Level1){
+        if (level == (int)SceneLoader.SCENES.Game){
             roomProbabilities = new List<RoomProbability>(GameManager.I.rooms.Length);
         }
     }

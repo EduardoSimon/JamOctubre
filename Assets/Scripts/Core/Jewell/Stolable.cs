@@ -11,5 +11,6 @@ public class Stolable : MonoBehaviour{
     public void OnItemPickedUp()
     {
         this.gameObject.SetActive(false);
+        HUDController.I.UpdateScore(moneyValue);
     }
 }
