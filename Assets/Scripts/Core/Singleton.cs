@@ -20,6 +20,11 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     private static readonly object _lock = new object();
 
+    private void Awake()
+    {
+        _instance = (T)FindObjectOfType(typeof(T));
+    }
+
     public static T I
     {
         get
