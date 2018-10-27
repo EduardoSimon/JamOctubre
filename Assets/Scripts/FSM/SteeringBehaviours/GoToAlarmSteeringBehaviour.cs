@@ -17,6 +17,9 @@ public class GoToAlarmSteeringBehaviour : SteeringBehaviour {
         if (navMesh.destination != alarm.position){
             navMesh.SetDestination(alarm.position);
         }
+        if (Vector3.Distance(this.transform.position, alarm.position) <= navMesh.radius * 4f){
+            GameManager.I.alarmEnabled = true;
+        }
 
     }
 }

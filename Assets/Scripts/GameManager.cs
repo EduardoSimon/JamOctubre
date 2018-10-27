@@ -32,7 +32,7 @@ public class GameManager : Singleton<GameManager> {
     }
 
     public void InitCoroutines(){
-        StartCoroutine(IsPlayerDetected());
+        //StartCoroutine(IsPlayerDetected());
         StartCoroutine(IsLevelCompleted());
     }
 

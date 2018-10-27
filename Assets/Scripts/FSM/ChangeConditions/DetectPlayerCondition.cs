@@ -44,6 +44,7 @@ public class DetectPlayerCondition : Condition {
 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
+                    GetComponent<AudioSource>().Play();
                     return true;
                 }
             }
@@ -51,11 +52,12 @@ public class DetectPlayerCondition : Condition {
         return false;
     }
 
+    /*
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, viewRadius);
     }
-
+    */
 
 
 
