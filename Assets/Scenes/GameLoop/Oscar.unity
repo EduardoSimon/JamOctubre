@@ -15862,52 +15862,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee9b7712b6b6ec74485cbc73a2bce1ff, type: 3}
   m_IsPrefabAsset: 0
-<<<<<<< HEAD:Assets/Scenes/Oscar.unity
 --- !u!1001 &1302600997
-=======
---- !u!4 &788611479 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: ee9b7712b6b6ec74485cbc73a2bce1ff,
-    type: 3}
-  m_PrefabInternal: {fileID: 1328274664}
---- !u!1 &826945543
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 826945544}
-  m_Layer: 0
-  m_Name: Escenario
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &826945544
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 826945543}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 572213037}
-  - {fileID: 189481290}
-  - {fileID: 708904221}
-  m_Father: {fileID: 0}
-  m_RootOrder: 4
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &828158163 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: ee9b7712b6b6ec74485cbc73a2bce1ff,
-    type: 3}
-  m_PrefabInternal: {fileID: 936096552}
---- !u!1001 &828511564
->>>>>>> 4341f71718f04a87585638d2c9e94998670d6ca5:Assets/Scenes/GameLoop/Oscar.unity
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -19622,7 +19577,6 @@ BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-<<<<<<< HEAD:Assets/Scenes/Oscar.unity
   m_GameObject: {fileID: 1622376091}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -19631,22 +19585,6 @@ BoxCollider:
   m_Size: {x: 4, y: 0.20000052, z: 4}
   m_Center: {x: 0, y: -0.000000059604645, z: 1.7763568e-15}
 --- !u!4 &1626996150 stripped
-=======
-  m_GameObject: {fileID: 1281596395}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!4 &1281761598 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: ee9b7712b6b6ec74485cbc73a2bce1ff,
-    type: 3}
-  m_PrefabInternal: {fileID: 1519203548}
---- !u!4 &1284778950 stripped
->>>>>>> 4341f71718f04a87585638d2c9e94998670d6ca5:Assets/Scenes/GameLoop/Oscar.unity
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: ee9b7712b6b6ec74485cbc73a2bce1ff,
     type: 3}
@@ -22253,7 +22191,6 @@ Prefab:
       propertyPath: m_Name
       value: FachadaNeutra (45)
       objectReference: {fileID: 0}
-<<<<<<< HEAD:Assets/Scenes/Oscar.unity
     - target: {fileID: 4359604711481422, guid: 592bdfdf55167264da00c879acd1b5bb, type: 2}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -89.98
@@ -22270,111 +22207,6 @@ Prefab:
   m_SourcePrefab: {fileID: 100100000, guid: 592bdfdf55167264da00c879acd1b5bb, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1001 &1838831508
-=======
-    m_RemovedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: ee9b7712b6b6ec74485cbc73a2bce1ff, type: 3}
-  m_IsPrefabAsset: 0
---- !u!1 &1695989720
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1695989723}
-  - component: {fileID: 1695989722}
-  - component: {fileID: 1695989721}
-  m_Layer: 0
-  m_Name: Main Camera
-  m_TagString: MainCamera
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!81 &1695989721
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1695989720}
-  m_Enabled: 1
---- !u!20 &1695989722
-Camera:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1695989720}
-  m_Enabled: 1
-  serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
-  m_projectionMatrixMode: 1
-  m_SensorSize: {x: 36, y: 24}
-  m_LensShift: {x: 0, y: 0}
-  m_FocalLength: 50
-  m_NormalizedViewPortRect:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1
-    height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
-  orthographic: 0
-  orthographic size: 5
-  m_Depth: -1
-  m_CullingMask:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_RenderingPath: -1
-  m_TargetTexture: {fileID: 0}
-  m_TargetDisplay: 0
-  m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
-  m_ForceIntoRT: 0
-  m_OcclusionCulling: 1
-  m_StereoConvergence: 10
-  m_StereoSeparation: 0.022
---- !u!4 &1695989723
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1695989720}
-  m_LocalRotation: {x: 0.5304627, y: 0.13411587, z: -0.08544123, w: 0.83265966}
-  m_LocalPosition: {x: -16.53, y: 37.8, z: -4.13}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 65, y: 18.3, z: 0}
---- !u!1 &1704325090 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100000, guid: dec0b024a05bdc44fb0339f075fc4619,
-    type: 3}
-  m_PrefabInternal: {fileID: 2072187298}
---- !u!4 &1704325091 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 400000, guid: dec0b024a05bdc44fb0339f075fc4619,
-    type: 3}
-  m_PrefabInternal: {fileID: 2072187298}
---- !u!65 &1704325094
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1704325090}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 4, y: 0.20000052, z: 4}
-  m_Center: {x: 0, y: -0.000000059604645, z: 1.7763568e-15}
---- !u!1001 &1704586530
->>>>>>> 4341f71718f04a87585638d2c9e94998670d6ca5:Assets/Scenes/GameLoop/Oscar.unity
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -22921,51 +22753,7 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ee9b7712b6b6ec74485cbc73a2bce1ff, type: 3}
   m_IsPrefabAsset: 0
-<<<<<<< HEAD:Assets/Scenes/Oscar.unity
 --- !u!1001 &1887281347
-=======
---- !u!1 &1784201009
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1784201011}
-  - component: {fileID: 1784201010}
-  m_Layer: 0
-  m_Name: _GM
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1784201010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1784201009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db25ece23fb20f7488b1f24e047a9f49, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1784201011
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1784201009}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.3395724, y: 6.73886, z: -13.96875}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1001 &1802554394
->>>>>>> 4341f71718f04a87585638d2c9e94998670d6ca5:Assets/Scenes/GameLoop/Oscar.unity
 Prefab:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -24306,11 +24094,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: c9e62f8c42148d842b87f12f2a603470, type: 3}
       propertyPath: m_RootOrder
-<<<<<<< HEAD:Assets/Scenes/Oscar.unity
       value: 18
-=======
-      value: 3
->>>>>>> 4341f71718f04a87585638d2c9e94998670d6ca5:Assets/Scenes/GameLoop/Oscar.unity
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: c9e62f8c42148d842b87f12f2a603470, type: 3}
       propertyPath: m_Name
