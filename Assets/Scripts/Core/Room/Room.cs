@@ -6,7 +6,7 @@ public class Room : MonoBehaviour{
     public int capacity;
     public bool full;
     public ROOM roomName;
-    public List<Jewell> jewells;
+    public List<Stolable> jewells;
 }
 
 

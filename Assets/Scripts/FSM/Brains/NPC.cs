@@ -61,7 +61,7 @@ public class NPC : NPCStatesBehaviour
         {
             new NextStateInfo(this, STATE.GoingShelter, STATE.None, GetComponent<AlarmEnabledCondition>())
         };
-        FSMSystem.I.AddTransition(this, STATE.GoingAlarm, _nextStateInfo4); 
+        FSMSystem.I.AddTransition(this, STATE.GoingAlarm, _nextStateInfo4);
     }
 
     public void SetChangingRoomState()

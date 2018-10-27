@@ -15,7 +15,7 @@ public class PauseMenu : MonoBehaviour {
         {
             Scene scene = SceneManager.GetActiveScene();
 
-            if(scene.name == "Game")
+            if(scene.name == "Oscar")
             {
                 if (GameIsPaused == true)
                 {
