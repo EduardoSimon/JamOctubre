@@ -11,6 +11,9 @@ public class TimeElapsedCondition : Condition
         currentTime += Time.deltaTime;
         if (currentTime >= timeToRecolocate)
         {
+            if (!GetComponent<NPC>().canDetectNPC){
+                StartCoroutine(GetComponent<NPC>().EnableFindPersonAgain(GetComponent<NPC>().timeToFindAgain));
+            }
             currentTime = 0f;
             return true;
         }

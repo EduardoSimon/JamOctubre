@@ -4,10 +4,194 @@
     <e p="C:\Users\edu97\.Rider2018.2\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\edu97\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_JamOctubreRepo.1333544009.00" t="ExcludeRecursive" />
     <e p="D:\Unity\JamOctubreRepo" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Demigiant" t="Include">
+          <e p="DOTween" t="Include">
+            <e p="Modules" t="Include">
+              <e p="DOTweenModuleAudio.cs" t="Include" />
+              <e p="DOTweenModulePhysics.cs" t="Include" />
+              <e p="DOTweenModulePhysics2D.cs" t="Include" />
+              <e p="DOTweenModuleSprite.cs" t="Include" />
+              <e p="DOTweenModuleUI.cs" t="Include" />
+              <e p="DOTweenModuleUnityVersion.cs" t="Include" />
+              <e p="DOTweenModuleUtils.cs" t="Include" />
+            </e>
+            <e p="README.txt" t="Include" />
+          </e>
+        </e>
+        <e p="HouseSceneController.cs" t="Include" />
         <e p="Plugins" t="Include">
+          <e p="Aura" t="Include">
+            <e p="Attributes" t="Include">
+              <e p="ColorCircularPickerAttribute.cs" t="Include" />
+              <e p="Texture3DPreviewAttribute.cs" t="Include" />
+            </e>
+            <e p="Classes" t="Include">
+              <e p="Aura.cs" t="Include" />
+              <e p="AuraLight.cs" t="Include" />
+              <e p="AuraVolume.cs" t="Include" />
+              <e p="Buffers.cs" t="Include" />
+              <e p="CullableObject.cs" t="Include" />
+              <e p="DirectionalLightsManager.cs" t="Include" />
+              <e p="DirectionalShadowDataCollector.cs" t="Include" />
+              <e p="Frustum.cs" t="Include" />
+              <e p="FrustumSettings.cs" t="Include" />
+              <e p="LightsManager.cs" t="Include" />
+              <e p="ObjectsCuller.cs" t="Include" />
+              <e p="PointLightsManager.cs" t="Include" />
+              <e p="ShadowmapsCollector.cs" t="Include" />
+              <e p="SpotLightsManager.cs" t="Include" />
+              <e p="SwappableRenderTexture.cs" t="Include" />
+              <e p="Texture2DArrayComposer.cs" t="Include" />
+              <e p="VolumesManager.cs" t="Include" />
+              <e p="VolumetricTexture.cs" t="Include" />
+              <e p="VolumetricTextureArrayComposer.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="Drawers" t="Include">
+                <e p="ColorCircularPickerDrawer.cs" t="Include" />
+                <e p="Texture3DPreviewDrawer.cs" t="Include" />
+              </e>
+              <e p="Editors" t="Include">
+                <e p="AuraEditor.cs" t="Include" />
+                <e p="AuraLightEditor.cs" t="Include" />
+                <e p="AuraVolumeEditor.cs" t="Include" />
+                <e p="CreateTexture3DAssetTool.cs" t="Include" />
+                <e p="Texture3DEditor.cs" t="Include" />
+              </e>
+              <e p="Enums" t="Include">
+                <e p="Texture3DReadingOrderEnum.cs" t="Include" />
+              </e>
+              <e p="Extensions" t="Include">
+                <e p="Texture3DExtensions.cs" t="Include" />
+              </e>
+              <e p="Helpers" t="Include">
+                <e p="GuiHelpers.cs" t="Include" />
+                <e p="MeshHelpers.cs" t="Include" />
+                <e p="PreviewRenderUtilityHelpers.cs" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="ColorFieldDrawerShader.shader" t="Include" />
+                <e p="Texture3DPreviewShader.shader" t="Include" />
+              </e>
+              <e p="Statics" t="Include">
+                <e p="GuiStyles.cs" t="Include" />
+              </e>
+            </e>
+            <e p="Enums" t="Include">
+              <e p="FrustumParametersEnum.cs" t="Include" />
+              <e p="OcclusionCullingAccuracyEnum.cs" t="Include" />
+              <e p="VolumetricTextureFilterModeEnum.cs" t="Include" />
+              <e p="VolumetricTextureWrapModeEnum.cs" t="Include" />
+              <e p="VolumeTypeEnum.cs" t="Include" />
+            </e>
+            <e p="Examples" t="Include">
+              <e p="Sponza" t="Include">
+                <e p="Fireball" t="Include">
+                  <e p="Fireball.cs" t="Include" />
+                  <e p="FireballBlendAdd.shader" t="Include" />
+                </e>
+                <e p="Scripts" t="Include">
+                  <e p="AutoMoveAndRotate.cs" t="Include" />
+                  <e p="DebugFps.cs" t="Include" />
+                  <e p="FreeCamera.cs" t="Include" />
+                  <e p="LightFlicker.cs" t="Include" />
+                  <e p="MoveSinCos.cs" t="Include" />
+                  <e p="SinRotationOffset.cs" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Extensions" t="Include">
+              <e p="CameraExtensions.cs" t="Include" />
+              <e p="FloatExtensions.cs" t="Include" />
+              <e p="FrustumParametersEnumExtensions.cs" t="Include" />
+              <e p="Gaia" t="Include">
+                <e p="GaiaExtension.cs" t="Include" />
+              </e>
+              <e p="GenericExtensions.cs" t="Include" />
+              <e p="IntExtensions.cs" t="Include" />
+              <e p="Matrix4x4Extensions.cs" t="Include" />
+              <e p="RenderTextureExtensions.cs" t="Include" />
+              <e p="StringExtensions.cs" t="Include" />
+              <e p="Vector3Extensions.cs" t="Include" />
+              <e p="Vector4Extensions.cs" t="Include" />
+            </e>
+            <e p="License" t="Include">
+              <e p="license.txt" t="Include" />
+            </e>
+            <e p="Scripts" t="Include">
+              <e p="GenerateComputeShaderKernelVariants.cs" t="Include" />
+            </e>
+            <e p="Shaders" t="Include">
+              <e p="Aura.cginc" t="Include" />
+              <e p="ComputeShaders" t="Include">
+                <e p="ComputeAccumulationComputeShader.compute" t="Include" />
+                <e p="ComputeDataComputeShader.compute" t="Include" />
+                <e p="ComputeMaximumDepthComputeShader.compute" t="Include" />
+                <e p="Includes" t="Include">
+                  <e p="DirectionalLightInjection.cginc" t="Include" />
+                  <e p="OcclusionCulling.cginc" t="Include" />
+                  <e p="PointLightInjection.cginc" t="Include" />
+                  <e p="SpotLightInjection.cginc" t="Include" />
+                  <e p="TemporalReprojection.cginc" t="Include" />
+                  <e p="VolumeInjection.cginc" t="Include" />
+                </e>
+              </e>
+              <e p="Includes" t="Include">
+                <e p="AuraParticlesBase.cginc" t="Include" />
+                <e p="AuraParticlesUsage.cginc" t="Include" />
+                <e p="AuraUsage.cginc" t="Include" />
+                <e p="BlueNoise.cginc" t="Include" />
+                <e p="Common.cginc" t="Include" />
+                <e p="CommonFunctions.cginc" t="Include" />
+                <e p="CommonVariables.cginc" t="Include" />
+                <e p="Noise.cginc" t="Include" />
+                <e p="Structs.cginc" t="Include" />
+              </e>
+              <e p="Shaders" t="Include">
+                <e p="Particles" t="Include">
+                  <e p="AuraParticlesAdditive.shader" t="Include" />
+                  <e p="AuraParticlesAlphaBlend.shader" t="Include" />
+                  <e p="AuraParticlesBlendAdd.shader" t="Include" />
+                </e>
+                <e p="PostProcessShader.shader" t="Include" />
+                <e p="ProcessOcclusionTextureShader.shader" t="Include" />
+                <e p="StoreDirectionalSpotLightCookieMap.shader" t="Include" />
+                <e p="StorePointLightCookieMap.shader" t="Include" />
+                <e p="StorePointLightShadowMap.shader" t="Include" />
+                <e p="StoreShadowDataShader.shader" t="Include" />
+                <e p="Surface" t="Include">
+                  <e p="AuraStandardAlphaBlended.shader" t="Include" />
+                </e>
+              </e>
+            </e>
+            <e p="Statics" t="Include">
+              <e p="CustomGizmo.cs" t="Include" />
+              <e p="FrustumCorners.cs" t="Include" />
+            </e>
+            <e p="Structs" t="Include">
+              <e p="DirectionalLightParameters.cs" t="Include" />
+              <e p="DynamicNoiseParameters.cs" t="Include" />
+              <e p="FrustumSettingsParameters.cs" t="Include" />
+              <e p="LevelsParameters.cs" t="Include" />
+              <e p="MatrixFloats.cs" t="Include" />
+              <e p="PointLightParameters.cs" t="Include" />
+              <e p="SpotLightParameters.cs" t="Include" />
+              <e p="TransformParameters.cs" t="Include" />
+              <e p="VolumeData.cs" t="Include" />
+              <e p="VolumeDynamicNoiseData.cs" t="Include" />
+              <e p="VolumeGradient.cs" t="Include" />
+              <e p="VolumeInjectionColorParameters.cs" t="Include" />
+              <e p="VolumeInjectionCommonParameters.cs" t="Include" />
+              <e p="VolumeInjectionParameters.cs" t="Include" />
+              <e p="VolumeInjectionShape.cs" t="Include" />
+              <e p="VolumeLevelsData.cs" t="Include" />
+              <e p="VolumeTextureData.cs" t="Include" />
+            </e>
+          </e>
           <e p="Game Jam Template" t="Include">
             <e p="Fonts" t="Include">
               <e p="OpenSans" t="Include">
@@ -42,37 +226,67 @@
         </e>
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
+            <e p="Jewell" t="Include">
+              <e p="Stolable.cs" t="Include" />
+            </e>
+            <e p="Room" t="Include">
+              <e p="Room.cs" t="Include" />
+            </e>
             <e p="SceneLoader.cs" t="Include" />
             <e p="Singleton.cs" t="Include" />
           </e>
           <e p="FSM" t="Include">
+            <e p="Brains" t="Include">
+              <e p="NPC.cs" t="Include" />
+              <e p="NPCStatesBehaviour.cs" t="Include" />
+            </e>
             <e p="ChangeConditions" t="Include">
+              <e p="AlarmEnabledCondition.cs" t="Include" />
               <e p="Condition.cs" t="Include" />
               <e p="DetectPlayerCondition.cs" t="Include" />
-              <e p="PlayerAliveCondition.cs" t="Include" />
+              <e p="FindOtherPersonCondition.cs" t="Include" />
+              <e p="NextRoomReachedCondition.cs" t="Include" />
               <e p="TimeElapsedCondition.cs" t="Include" />
             </e>
             <e p="FSMSystem.cs" t="Include" />
             <e p="NextStateInfo" t="Include">
               <e p="NextStateInfo.cs" t="Include" />
             </e>
-            <e p="NPCStatesBehaviour.cs" t="Include" />
             <e p="States" t="Include">
               <e p="State.cs" t="Include" />
             </e>
             <e p="SteeringBehaviours" t="Include">
               <e p="ChaseSteeringBehaviour.cs" t="Include" />
+              <e p="FaceTowardsSteeringBehaviour.cs" t="Include" />
+              <e p="GoToAlarmSteeringBehaviour.cs" t="Include" />
+              <e p="GoToNextRoomSteeringBehaviour.cs" t="Include" />
+              <e p="GoToPositionSteeringBehaviour.cs" t="Include" />
               <e p="MoveLastPositionPlayerSteeringBehaviour.cs" t="Include" />
-              <e p="PatrolSteeringBehaviour.cs" t="Include" />
+              <e p="PerformTalkingSteeringBehaviour.cs" t="Include" />
               <e p="RotateSteeringBehaviour.cs" t="Include" />
               <e p="SteeringBehaviour.cs" t="Include" />
+              <e p="StopNavMeshSteeringBehaviour.cs" t="Include" />
+              <e p="TalkSteeringBehaviour.cs" t="Include" />
             </e>
             <e p="Transitions" t="Include">
               <e p="Transition.cs" t="Include" />
             </e>
           </e>
           <e p="GameManager.cs" t="Include" />
+          <e p="InitGameManager.cs" t="Include" />
+          <e p="PlayerController.cs" t="Include" />
+          <e p="Rotator.cs" t="Include" />
+          <e p="UI" t="Include">
+            <e p="_PlayerPrefs.cs" t="Include" />
+            <e p="AudioManager.cs" t="Include" />
+            <e p="HighestScore.cs" t="Include" />
+            <e p="LevelLoader.cs" t="Include" />
+            <e p="MainMenu.cs" t="Include" />
+            <e p="PauseMenu.cs" t="Include" />
+            <e p="ScoreManager.cs" t="Include" />
+          </e>
         </e>
+        <e p="StolableUI.cs" t="Include" />
       </e>
       <e p="JamOctubreRepo.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />

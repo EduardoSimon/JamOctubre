@@ -13,9 +13,12 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
     public State currentState;
     public List<Transition> currentTransitions;
 
+    public Room currentRoom;
     public List<RoomProbability> roomProbabilities;
     public bool roomSelected;
     public bool destinationFixed;
+    public bool canDetectNPC = true;
+    public float timeToFindAgain = 5f;
 
     public void ActBehaviours()
     {
@@ -23,7 +26,7 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
         {
             foreach (SteeringBehaviour behaviour in currentState.behaviours)
             {
-                Debug.Log(behaviour.ToString());
+                //Debug.Log(behaviour.ToString());
                 behaviour.Act();
             }
         }
@@ -36,12 +39,12 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
             foreach (NextStateInfo nsi in trans.nextStateInfo)
             {
                 bool result = nsi.changeCondition.Check();
-                Debug.Log(nsi.changeCondition.ToString() + "= " + result);
+                //Debug.Log(nsi.changeCondition.ToString() + "= " + result);
                 if (result == true)
                 {  
                     if (nsi.stateCaseTrue.stateName == STATE.None)
                     {
-                        break;
+                        continue;
                     }
                     currentState = nsi.stateCaseTrue;
                 }
@@ -49,9 +52,10 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
                 {
                     if (nsi.stateCaseFalse.stateName == STATE.None)
                     {
-                        break;
+                        continue;
                     }         
                     currentState = nsi.stateCaseFalse;
+                   
                 }
                 currentTransitions = transitions.FindAll(x => x.currentState == currentState);
                 return;
