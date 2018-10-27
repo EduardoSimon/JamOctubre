@@ -2657,6 +2657,7 @@ MonoBehaviour:
   speedSmoothTime: 0.1
   clip: {fileID: 7400000, guid: e79cc338b28c04a41b0cf124be9f0f76, type: 2}
   InteractKeyCode: 101
+  lookItem: {fileID: 4457627804885534, guid: db6017ce598fc6048a5914c33fa57553, type: 2}
   velocity: {x: 0, y: 0, z: 0}
 --- !u!136 &136580143579011628
 CapsuleCollider:

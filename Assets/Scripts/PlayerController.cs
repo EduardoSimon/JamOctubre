@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController> {
@@ -10,6 +11,7 @@ public class PlayerController : Singleton<PlayerController> {
     public float speedSmoothTime = 0.1f;
     public AnimationClip clip;
     public KeyCode InteractKeyCode = KeyCode.E;
+    public Transform lookItem;
     
     private float turnSmoothVelocity;
     private float speedSmoothVelocity;
@@ -75,6 +77,14 @@ public class PlayerController : Singleton<PlayerController> {
             if (Input.GetKeyDown(InteractKeyCode))
             {
                 isPlayingPickupAnimation = true;
+                
+                //get the rotation to the object
+                Vector3 temp = (lookItem.transform.position - transform.position).normalized;
+                temp.y = 0;
+                Quaternion newRotation = Quaternion.LookRotation(temp,Vector3.up);
+                
+                //apply it
+                transform.DORotateQuaternion(newRotation, 2.0f);
                 StartCoroutine(PickUpObjectSequence(item));
                 
             }

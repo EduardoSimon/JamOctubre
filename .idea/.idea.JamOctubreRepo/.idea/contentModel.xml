@@ -22,6 +22,7 @@
             <e p="README.txt" t="Include" />
           </e>
         </e>
+        <e p="HouseSceneController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Aura" t="Include">
             <e p="Attributes" t="Include">
@@ -257,12 +258,14 @@
             <e p="SteeringBehaviours" t="Include">
               <e p="ChaseSteeringBehaviour.cs" t="Include" />
               <e p="FaceTowardsSteeringBehaviour.cs" t="Include" />
+              <e p="GoToAlarmSteeringBehaviour.cs" t="Include" />
               <e p="GoToNextRoomSteeringBehaviour.cs" t="Include" />
               <e p="GoToPositionSteeringBehaviour.cs" t="Include" />
               <e p="MoveLastPositionPlayerSteeringBehaviour.cs" t="Include" />
               <e p="PerformTalkingSteeringBehaviour.cs" t="Include" />
               <e p="RotateSteeringBehaviour.cs" t="Include" />
               <e p="SteeringBehaviour.cs" t="Include" />
+              <e p="StopNavMeshSteeringBehaviour.cs" t="Include" />
               <e p="TalkSteeringBehaviour.cs" t="Include" />
             </e>
             <e p="Transitions" t="Include">
