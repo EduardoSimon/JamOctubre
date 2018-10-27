@@ -11,6 +11,8 @@ using UnityEngine;
 [RequireComponent(typeof(PerformTalkingSteeringBehaviour))]
 [RequireComponent(typeof(StopNavMeshSteeringBehaviour))]
 [RequireComponent(typeof(GoToAlarmSteeringBehaviour))]
+[RequireComponent(typeof(NextRoomReachedCondition))]
+
 
 public class NPC : NPCStatesBehaviour
 {
