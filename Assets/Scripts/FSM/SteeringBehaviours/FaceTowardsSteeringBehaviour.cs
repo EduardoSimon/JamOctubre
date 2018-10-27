@@ -19,7 +19,7 @@ public class FaceTowardsSteeringBehaviour : SteeringBehaviour {
                     transform.DORotateQuaternion(newRotation, rotationDuration);
                     //transform.rotation = newRotation;
                 }
-                
+
 
             }
      }

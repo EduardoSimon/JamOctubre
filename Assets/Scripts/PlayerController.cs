@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
 using UnityEngine;
 
 public class PlayerController : Singleton<PlayerController> {
@@ -10,6 +11,7 @@ public class PlayerController : Singleton<PlayerController> {
     public float speedSmoothTime = 0.1f;
     public AnimationClip clip;
     public KeyCode InteractKeyCode = KeyCode.E;
+    public Transform lookItem;
     
     private float turnSmoothVelocity;
     private float speedSmoothVelocity;
@@ -68,13 +70,21 @@ public class PlayerController : Singleton<PlayerController> {
         }    
     }
 
-    void PickObject(Stolable item)
+    void PickObject(StolableUI item)
     {
         if (!isPlayingPickupAnimation)
         {
             if (Input.GetKeyDown(InteractKeyCode))
             {
                 isPlayingPickupAnimation = true;
+                
+                //get the rotation to the object
+                Vector3 temp = (lookItem.transform.position - transform.position).normalized;
+                temp.y = 0;
+                Quaternion newRotation = Quaternion.LookRotation(temp,Vector3.up);
+                
+                //apply it
+                transform.DORotateQuaternion(newRotation, 2.0f);
                 StartCoroutine(PickUpObjectSequence(item));
                 
             }
@@ -82,26 +92,30 @@ public class PlayerController : Singleton<PlayerController> {
         }
     }
 
-    private IEnumerator PickUpObjectSequence(Stolable item)
+    private IEnumerator PickUpObjectSequence(StolableUI item)
     {
         playerAnimator.SetTrigger("Pick");
         controller.enabled = false;
         canDetectInput = false;
+        item.OnInteractKeyPressed(InteractKeyCode);
 
-        while (true)
+        while (Input.GetKey(InteractKeyCode))
         {
-            yield return new WaitForSeconds(clip.length);
-            item.OnItemPickedUp();
             isPlayingPickupAnimation = false;
             controller.enabled = true;
             canDetectInput = true;
-            yield break;
+            yield return null;
         }
+
+        playerAnimator.SetTrigger("InterruptPick");
+        isPlayingPickupAnimation = false;
+        controller.enabled = true;
+        canDetectInput = true;    
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Stolable item = other.GetComponent<Stolable>();
+        StolableUI item = other.GetComponent<StolableUI>();
 
         if (item != null)
         {

@@ -19,14 +19,14 @@ public class FindOtherPersonCondition : Condition
     }
 
     public bool FindNPC(){
-        //currentTarget = null;   
+        //currentTarget = null;
 
         Collider[] targetsInside = Physics.OverlapSphere(transform.position, viewRadius, targetMask);
         for (int i = 0; i < targetsInside.Length; i++)
         {
             Transform target = targetsInside[i].transform;
 
-            if (this.GetComponent<NPC>().canDetectNPC && target.GetComponent<NPC>() != null && 
+            if (this.GetComponent<NPC>().canDetectNPC && target.GetComponent<NPC>() != null &&
                 target.GetComponent<NPC>() != this.GetComponent<NPC>() && target.GetComponent<NPC>().canDetectNPC){
                 Debug.Log(this.name + " ha encontrado a " + target.name);
                 GetComponent<NPC>().canDetectNPC = false;

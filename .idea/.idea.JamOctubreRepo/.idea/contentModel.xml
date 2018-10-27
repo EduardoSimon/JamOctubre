@@ -22,6 +22,7 @@
             <e p="README.txt" t="Include" />
           </e>
         </e>
+        <e p="HouseSceneController.cs" t="Include" />
         <e p="Plugins" t="Include">
           <e p="Aura" t="Include">
             <e p="Attributes" t="Include">
@@ -191,6 +192,37 @@
               <e p="VolumeTextureData.cs" t="Include" />
             </e>
           </e>
+          <e p="Game Jam Template" t="Include">
+            <e p="Fonts" t="Include">
+              <e p="OpenSans" t="Include">
+                <e p="License!.txt" t="Include" />
+              </e>
+            </e>
+            <e p="GameJamTemplateReadMe.txt" t="Include" />
+            <e p="README.txt" t="Include" />
+            <e p="Scripts" t="Include">
+              <e p="FlexibleUI" t="Include">
+                <e p="FlexibleUI.cs" t="Include" />
+                <e p="FlexibleUIButton.cs" t="Include" />
+                <e p="FlexibleUIData.cs" t="Include" />
+                <e p="FlexibleUIImage.cs" t="Include" />
+                <e p="FlexibleUISlider.cs" t="Include" />
+                <e p="FlexibleUIText.cs" t="Include" />
+              </e>
+              <e p="Menu" t="Include">
+                <e p="DontDestroy.cs" t="Include" />
+                <e p="EventSystemChecker.cs" t="Include" />
+                <e p="MenuObject.cs" t="Include" />
+                <e p="MenuSettings.cs" t="Include" />
+                <e p="Pause.cs" t="Include" />
+                <e p="PlayMusic.cs" t="Include" />
+                <e p="QuitApplication.cs" t="Include" />
+                <e p="SetAudioLevels.cs" t="Include" />
+                <e p="ShowPanels.cs" t="Include" />
+                <e p="StartOptions.cs" t="Include" />
+              </e>
+            </e>
+          </e>
         </e>
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
@@ -226,12 +258,14 @@
             <e p="SteeringBehaviours" t="Include">
               <e p="ChaseSteeringBehaviour.cs" t="Include" />
               <e p="FaceTowardsSteeringBehaviour.cs" t="Include" />
+              <e p="GoToAlarmSteeringBehaviour.cs" t="Include" />
               <e p="GoToNextRoomSteeringBehaviour.cs" t="Include" />
               <e p="GoToPositionSteeringBehaviour.cs" t="Include" />
               <e p="MoveLastPositionPlayerSteeringBehaviour.cs" t="Include" />
               <e p="PerformTalkingSteeringBehaviour.cs" t="Include" />
               <e p="RotateSteeringBehaviour.cs" t="Include" />
               <e p="SteeringBehaviour.cs" t="Include" />
+              <e p="StopNavMeshSteeringBehaviour.cs" t="Include" />
               <e p="TalkSteeringBehaviour.cs" t="Include" />
             </e>
             <e p="Transitions" t="Include">
@@ -243,12 +277,16 @@
           <e p="PlayerController.cs" t="Include" />
           <e p="Rotator.cs" t="Include" />
           <e p="UI" t="Include">
+            <e p="_PlayerPrefs.cs" t="Include" />
             <e p="AudioManager.cs" t="Include" />
+            <e p="HighestScore.cs" t="Include" />
             <e p="LevelLoader.cs" t="Include" />
             <e p="MainMenu.cs" t="Include" />
             <e p="PauseMenu.cs" t="Include" />
+            <e p="ScoreManager.cs" t="Include" />
           </e>
         </e>
+        <e p="StolableUI.cs" t="Include" />
       </e>
       <e p="JamOctubreRepo.sln" t="IncludeFlat" />
       <e p="Library" t="ExcludeRecursive" />
