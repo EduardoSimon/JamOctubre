@@ -5,16 +5,6 @@ using UnityEngine;
 public class PerformTalkingSteeringBehaviour : SteeringBehaviour {
     public override void Act()
     {
-        throw new System.NotImplementedException();
+        Debug.Log("BLABLABLABLABLABLA");
     }
-
-    // Use this for initialization
-    void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

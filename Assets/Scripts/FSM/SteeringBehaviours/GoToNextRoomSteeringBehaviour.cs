@@ -7,9 +7,8 @@ using UnityEngine.AI;
 public class GoToNextRoomSteeringBehaviour : SteeringBehaviour
 {
     private NPC npc;
-    public Room currentRoom;
+    public Room nextRoom;
     private NavMeshAgent navMesh;
-
 
     private void Awake()
     {
@@ -19,37 +18,63 @@ public class GoToNextRoomSteeringBehaviour : SteeringBehaviour
 
     public override void Act()
     {
-        if (!npc.roomSelected){
-            float result = Random.value;
-            print(result);
-            //returns a value between 0 and 1
-            foreach (var prob in npc.roomProbabilities)
-            {
-                if (result >= prob.cumulativeProbability && result < prob.cumulativeProbability + prob.probability){
-                    print(prob.roomName);
-                    foreach (var room in GameManager.I.rooms)
-                    {
-                        if (room.roomName == prob.roomName){
-                            currentRoom = room;
-                            npc.roomSelected = true;
-                            Debug.Log("room selected!");
-                            //TODO: cuando lleguemos a esta habitación se debe poner roomSelected a FALSE!!
-                            return;
-                        }
+        if (GameManager.I.alarmEnabled){
+            navMesh.isStopped = false;
+            Debug.Log("go to alarm room!!");
+            foreach (Room r in GameManager.I.rooms){
+                if (r.roomName == ROOM.ShelterRoom){
+                    if (navMesh.destination != r.transform.position){
+                        navMesh.SetDestination(r.transform.position);
                     }
-
                 }
             }
+            return;
+        }
+        
+        if (!npc.roomSelected){
+
+            GetNewRoom();
+
+            if (npc.currentRoom != null && npc.currentRoom != nextRoom){
+                while (npc.currentRoom == nextRoom){
+                    GetNewRoom();
+                }
+            }
+            npc.roomSelected = true;
+           
         }
         else{
-            Debug.Log("room already selected!");
+            navMesh.isStopped = false;
             if (!npc.destinationFixed){
-                navMesh.SetDestination(currentRoom.transform.position);
+                //navMesh.isStopped = false;
+                navMesh.SetDestination(nextRoom.transform.position);
                 npc.destinationFixed = true;
             }
 
         }
 
+    }
+
+    public void GetNewRoom(){
+
+        float result = Random.value;
+        //print(result);
+        foreach (var prob in npc.roomProbabilities)
+        {
+            if (result >= prob.cumulativeProbability && result < prob.cumulativeProbability + prob.probability)
+            {
+                //print(prob.roomName);
+                foreach (var room in GameManager.I.rooms)
+                {
+                    if (room.roomName == prob.roomName)
+                    {
+                        nextRoom = room;
+                        return;
+                    }
+                }
+
+            }
+        }
     }
 
 }

@@ -9,6 +9,7 @@ using UnityEngine;
 [RequireComponent(typeof(GoToNextRoomSteeringBehaviour))]
 [RequireComponent(typeof(FaceTowardsSteeringBehaviour))]
 [RequireComponent(typeof(PerformTalkingSteeringBehaviour))]
+[RequireComponent(typeof(StopNavMeshSteeringBehaviour))]
 public class NPC : NPCStatesBehaviour
 {
     private void Start()
@@ -51,7 +52,8 @@ public class NPC : NPCStatesBehaviour
         {
             new NextStateInfo(this, STATE.ChangingRoom, STATE.None, GetComponent<TimeElapsedCondition>()),
             new NextStateInfo(this, STATE.GoingAlarm, STATE.None, GetComponent<DetectPlayerCondition>()),
-            new NextStateInfo(this, STATE.GoingShelter, STATE.None, GetComponent<AlarmEnabledCondition>())
+            new NextStateInfo(this, STATE.GoingShelter, STATE.None, GetComponent<AlarmEnabledCondition>()),
+            new NextStateInfo(this, STATE.Talking, STATE.None, GetComponent<FindOtherPersonCondition>())
         };
         FSMSystem.I.AddTransition(this, STATE.Idle, _nextStateInfo3);
 
@@ -79,7 +81,8 @@ public class NPC : NPCStatesBehaviour
         List<SteeringBehaviour> actions = new List<SteeringBehaviour>()
         {
             GetComponent<FaceTowardsSteeringBehaviour>(),
-            GetComponent<PerformTalkingSteeringBehaviour>()
+            GetComponent<PerformTalkingSteeringBehaviour>(),
+            GetComponent<StopNavMeshSteeringBehaviour>()
         };
 
         FSMSystem.I.AddState(this, new State(STATE.Talking));
@@ -88,26 +91,31 @@ public class NPC : NPCStatesBehaviour
 
     public void SetIdleState()
     {
-        //create actions.
+        List<SteeringBehaviour> actions = new List<SteeringBehaviour>(){
+            GetComponent<StopNavMeshSteeringBehaviour>()
+        };
+
         FSMSystem.I.AddState(this, new State(STATE.Idle));
-        //add actions to this state.
+        FSMSystem.I.AddBehaviours(this, actions, this.states.Find((obj) => obj.stateName == STATE.Idle));
     }
 
     public void SetGoingAlarmState(){
         //create actions.
         List<SteeringBehaviour> actions = new List<SteeringBehaviour>()
         {
-            GetComponent<GoToPositionSteeringBehaviour>()
+            GetComponent<GoToAlarmSteeringBehaviour>()
         };
 
         FSMSystem.I.AddState(this, new State(STATE.GoingAlarm));
-        //add actions to this state.
+        FSMSystem.I.AddBehaviours(this, actions, this.states.Find((obj) => obj.stateName == STATE.GoingAlarm));
     }
 
     public void SetGoingShelterState(){
-        //create actions.
+        List<SteeringBehaviour> actions = new List<SteeringBehaviour>(){
+            GetComponent<GoToNextRoomSteeringBehaviour>()
+        };
         FSMSystem.I.AddState(this, new State(STATE.GoingShelter));
-        //add actions to this state.
+        FSMSystem.I.AddBehaviours(this, actions, this.states.Find((obj) => obj.stateName == STATE.GoingShelter));
     }
 
     public void SetNoneState(){
@@ -125,5 +133,11 @@ public class NPC : NPCStatesBehaviour
     {
         ActBehaviours();
         CheckConditions();
+    }
+
+    public IEnumerator EnableFindPersonAgain(float seconds){
+        yield return new WaitForSeconds(seconds);
+        canDetectNPC = true;
+        Debug.Log(this.name + "can find NPC again!");
     }
 }
