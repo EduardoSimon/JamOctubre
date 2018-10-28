@@ -1,0 +1,38 @@
+2018-10-28 23:13:44.2458 [DEBUG] Validating model...
+2018-10-28 23:13:44.4568 [DEBUG] Model updated
+2018-10-28 23:13:44.4568 [DEBUG] Authenticating with server...
+2018-10-28 23:13:45.0346 [DEBUG] Connected to room. (84336:SceneFusion:SceneFusion)
+2018-10-28 23:13:45.0596 [INFO] Connected to server.
+2018-10-28 23:13:45.0596 [DEBUG] OS : Microsoft Windows NT 10.0.17134.0
+2018-10-28 23:13:45.0596 [DEBUG] Unity Version : 2018.2.12f1
+2018-10-28 23:13:45.0606 [DEBUG] Pro License : False
+2018-10-28 23:13:45.0606 [DEBUG] Platform : WindowsEditor
+2018-10-28 23:13:45.0616 [DEBUG] Build Target : StandaloneWindows64
+2018-10-28 23:13:45.0616 [DEBUG] Scene Fusion version : 1.8.1
+2018-10-28 23:13:45.0616 [DEBUG] Scene Fusion client build : 3
+2018-10-28 23:13:45.0626 [DEBUG] User : al341513@uji.es
+2018-10-28 23:13:45.0626 [DEBUG] Waiting for server response
+2018-10-28 23:13:45.1316 [DEBUG] Tier: Scene Fusion Free, Permissions: 00001400
+2018-10-28 23:13:45.1316 [DEBUG] User Permissions: FFFFFFFF
+2018-10-28 23:13:46.0854 [DEBUG] No stand-in for UnityEngine.ProceduralMaterial
+2018-10-28 23:13:46.0854 [DEBUG] No stand-in for UnityEngine.ProceduralTexture
+2018-10-28 23:13:46.5395 [DEBUG] Uploading scene 'Oscar'
+2018-10-28 23:13:47.6484 [DEBUG] Encoding objects for Scenes/GameLoop/Oscar.unity
+2018-10-28 23:13:50.4444 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:00.4674 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:00.4734 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:00.4814 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:00.4874 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:00.4944 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:00.5044 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:00.5274 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:01.2689 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:01.2809 [WARNING] Cannot sync '' (RenderTexture) because it is not in Unity's asset database.
+2018-10-28 23:14:01.4638 [DEBUG] Compressing scene data
+2018-10-28 23:14:05.4946 [DEBUG] Spawn request. (Objects: 1151)
+2018-10-28 23:14:05.5086 [DEBUG] Entity RPC. (Id: 1, Size: 27349, Reporting Threshold: 10000)
+2018-10-28 23:14:06.6545 [DEBUG] Loading complete
+2018-10-28 23:17:50.9542 [DEBUG] Disconnecting temporarily to recompile.
+2018-10-28 23:17:50.9552 [DEBUG] Disconnecting from room (84336:SceneFusion:SceneFusion)
+2018-10-28 23:17:50.9662 [INFO] Disconnected from server.
+2018-10-28 23:17:50.9662 [DEBUG] Disconnect. (Duration: 242)

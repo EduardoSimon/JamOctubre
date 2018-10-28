@@ -38,7 +38,11 @@ public class GameManager : Singleton<GameManager> {
         SceneManager.sceneLoaded += (scene, mode) =>
         {
             if (scene.buildIndex == (int) SceneLoader.SCENES.Game)
+            {
                 rooms = FindObjectsOfType<Room>();
+                HUDController.I.RestartHud();
+                HUDController.I.StartHud();
+            }
 
             if(scene.buildIndex == (int)SceneLoader.SCENES.MenuBueno)
             {
@@ -55,7 +59,8 @@ public class GameManager : Singleton<GameManager> {
         alarmEnabled = false;
         canCompleteLevel = false;
         levelCompleted = false;
-        HUDController.I.ResetHUD();
+        HUDController.I.RestartHud();
+        InitCoroutines();
     }
 
     IEnumerator TimeElapsed()

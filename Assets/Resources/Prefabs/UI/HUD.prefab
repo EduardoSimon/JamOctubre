@@ -176,6 +176,7 @@ GameObject:
   - component: {fileID: 114581297381796176}
   - component: {fileID: 114919432002187682}
   - component: {fileID: 82411465349554854}
+  - component: {fileID: 114588394869797470}
   m_Layer: 5
   m_Name: HUD
   m_TagString: Untagged
@@ -653,6 +654,17 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &114588394869797470
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658585905318364}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a16ce07724fd643c582fc68f916bd210, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114782253929732936
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -751,6 +763,7 @@ MonoBehaviour:
   score: {fileID: 114503548063868586}
   alarmClip: {fileID: 8300000, guid: 2fc0a92ba85864b4aa4d186b6e4bde86, type: 3}
   addScoreClip: {fileID: 8300000, guid: 9f6f52e881d02a44fa6e2d5ce8aa2f6e, type: 3}
+  saco: {fileID: 1319110035091312}
 --- !u!114 &114948746234184264
 MonoBehaviour:
   m_ObjectHideFlags: 1
