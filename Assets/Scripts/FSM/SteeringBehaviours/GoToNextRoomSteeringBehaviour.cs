@@ -7,7 +7,6 @@ using UnityEngine.AI;
 public class GoToNextRoomSteeringBehaviour : SteeringBehaviour
 {
     private NPC npc;
-    public Room nextRoom;
     private NavMeshAgent navMesh;
 
     private void Awake()
@@ -32,11 +31,11 @@ public class GoToNextRoomSteeringBehaviour : SteeringBehaviour
         }
         
         if (!npc.roomSelected){
-
+        
             GetNewRoom();
 
-            if (npc.currentRoom != null && npc.currentRoom != nextRoom){
-                while (npc.currentRoom == nextRoom){
+            if (npc.currentRoom != null){
+                while (npc.currentRoom == npc.nextRoom){
                     GetNewRoom();
                 }
             }
@@ -46,7 +45,7 @@ public class GoToNextRoomSteeringBehaviour : SteeringBehaviour
         else{
             navMesh.isStopped = false;
             if (!npc.destinationFixed){
-                navMesh.SetDestination(nextRoom.transform.position);
+                navMesh.SetDestination(npc.nextRoom.transform.position);
                 npc.destinationFixed = true;
             }
 
@@ -57,17 +56,15 @@ public class GoToNextRoomSteeringBehaviour : SteeringBehaviour
     public void GetNewRoom(){
 
         float result = Random.value;
-        //print(result);
         foreach (var prob in npc.roomProbabilities)
         {
             if (result >= prob.cumulativeProbability && result < prob.cumulativeProbability + prob.probability)
             {
-                //print(prob.roomName);
                 foreach (var room in GameManager.I.rooms)
                 {
                     if (room.roomName == prob.roomName)
                     {
-                        nextRoom = room;
+                        npc.nextRoom = room;
                         return;
                     }
                 }
