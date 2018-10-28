@@ -44,7 +44,7 @@ public class DetectPlayerCondition : Condition {
 
                 if (!Physics.Raycast(transform.position, dirToTarget, dstToTarget, obstacleMask))
                 {
-                    GetComponent<AudioSource>().Play();
+                    GetComponent<NPCSoundController>().PlaySoundScreaming();
                     return true;
                 }
             }

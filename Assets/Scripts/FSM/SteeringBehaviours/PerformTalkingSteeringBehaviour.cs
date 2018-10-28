@@ -5,6 +5,6 @@ using UnityEngine;
 public class PerformTalkingSteeringBehaviour : SteeringBehaviour {
     public override void Act()
     {
-        Debug.Log("BLABLABLABLABLABLA");
+
     }
 }

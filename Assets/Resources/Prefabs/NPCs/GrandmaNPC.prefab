@@ -1342,6 +1342,11 @@ GameObject:
   - component: {fileID: 114938656616608074}
   - component: {fileID: 114712525267030752}
   - component: {fileID: 114426960759678204}
+  - component: {fileID: 136176371357087308}
+  - component: {fileID: 114503988447644146}
+  - component: {fileID: 136607713652788516}
+  - component: {fileID: 114888448326208692}
+  - component: {fileID: 114650269046947892}
   m_Layer: 9
   m_Name: GrandmaNPC
   m_TagString: Untagged
@@ -2312,7 +2317,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1880230759645412}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.312, y: 2.011, z: 0}
+  m_LocalPosition: {x: 3.69, y: 2.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4838837891378206}
@@ -2833,7 +2838,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 9041cd7bc894045a28a3a9ddfa63d779, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -2861,7 +2866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd80e705a5f94998bdd44b7f04b62de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDuration: 3
+  rotationDuration: 0.5
 --- !u!114 &114167222236153108
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2885,7 +2890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef883e9ee6408484f868808015b57d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToRecolocate: 4
+  timeToRecolocate: 5
 --- !u!114 &114281316149195876
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2926,6 +2931,7 @@ MonoBehaviour:
     behaviours: []
   currentTransitions: []
   currentRoom: {fileID: 0}
+  nextRoom: {fileID: 0}
   roomProbabilities:
   - roomName: 0
     probability: 0.25
@@ -2948,7 +2954,24 @@ MonoBehaviour:
   roomSelected: 0
   destinationFixed: 0
   canDetectNPC: 1
-  timeToFindAgain: 3
+  timeToFindAgain: 12
+  goingToAlarm: 0
+  talkingWithSomeone: 0
+--- !u!114 &114503988447644146
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880230759645412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83d547ebf7174df587b9024b8737dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSpeed: 0
+  walkSpeed: 5
+  runSpeed: 10
+  parameterName: Blend
 --- !u!114 &114520017541542882
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2960,6 +2983,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6ecb1f3a1f09474ea8f67adb107f316, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114650269046947892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880230759645412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca6afe75d3da49429213c6175bdf48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screamingClip: {fileID: 0}
+  talkingClip: {fileID: 8300000, guid: 3ee4a401b0eaf43e9801c0b4ff40e6d8, type: 3}
+  walkingClip: {fileID: 0}
 --- !u!114 &114684975752718880
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2990,7 +3027,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be99b2eb21554bb2aa5729f6f3fb5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextRoom: {fileID: 0}
+--- !u!114 &114888448326208692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880230759645412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83d547ebf7174df587b9024b8737dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSpeed: 0
+  walkSpeed: 5
+  runSpeed: 10
+  parameterName: Blend
 --- !u!114 &114938656616608074
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3010,6 +3061,32 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 2048
+--- !u!136 &136176371357087308
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880230759645412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.27
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
+--- !u!136 &136607713652788516
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1880230759645412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.27
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!137 &137334501719338028
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3296,11 +3373,11 @@ NavMeshAgent:
   m_GameObject: {fileID: 1880230759645412}
   m_Enabled: 1
   m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
+  m_Radius: 1
+  m_Speed: 8.93
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1500
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1
