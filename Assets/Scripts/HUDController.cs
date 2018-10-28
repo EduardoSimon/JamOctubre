@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using DG.Tweening;
 
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -16,7 +15,6 @@ public class HUDController : Singleton<HUDController>
 	public Text score;
 	public AudioClip alarmClip;
 	public AudioClip addScoreClip;
-	public GameObject saco;
 	
 	private Image[] scoreLevels;
 	private Image[] alarmImages;
@@ -26,6 +24,7 @@ public class HUDController : Singleton<HUDController>
 
     private bool activatedAlarm = false;
 	
+
 	private void Awake()
 	{
 		scoreLevels = billetes.GetComponentsInChildren<Image>();
@@ -35,31 +34,18 @@ public class HUDController : Singleton<HUDController>
 		s = DOTween.Sequence();
 
 
-		RestartHud();
+		StartHud();
 	}
 
 	private void OnEnable()
 	{
-		SceneManager.sceneLoaded += (scene, mode) =>
-		{
-			HUDController[] controllers = FindObjectsOfType<HUDController>();
-			if (I != null && controllers != null)
-			{
-				foreach (var controller in controllers)
-				{
-					if (!controller == I)
-						Destroy(controller.gameObject);
-				}
-			}
-
-		};
+		StartHud();
 	}
 
-	public void RestartHud()
+	private void StartHud()
 	{
-		score.enabled = false;
-		saco.SetActive(false);
-		alarmImage.enabled = false;
+		score.text = 0.ToString();
+
 		if (scoreLevels != null)
 		{
 			foreach (var scoreLevel in scoreLevels)
@@ -79,11 +65,14 @@ public class HUDController : Singleton<HUDController>
             
     }
 
+    internal void ResetHUD()
+    {
+        score.text = 0.ToString();
+    }
+
     public void InitializeAlarmSprites()
 	{
 		_audioSource.PlayOneShot(alarmClip);
-
-		alarmImage.enabled = true;
 		
 		alarmImage.transform.DOShakePosition(0.5f, 5f, 40, 90f, false, true).SetLoops(-1);
 
@@ -141,14 +130,5 @@ public class HUDController : Singleton<HUDController>
 		}
 		
 		
-	}
-
-	public void StartHud()
-	{
-		score.enabled = true;
-		score.text = 0.ToString();
-		saco.SetActive(true);
-		score.text = 0.ToString();
-		alarmImage.enabled = false;
 	}
 }

@@ -78,11 +78,10 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 
     public virtual void ResetSingleton()
     {
-        if (_instance) 
-        {
-            Destroy(_instance.gameObject);
-            _instance = null;   
-        }
+        //if (_instance) {
+        //Destroy(_instance.gameObject);
+        //_instance = null;   
+        //}
 
     }
 
