@@ -19,6 +19,7 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
     public bool destinationFixed;
     public bool canDetectNPC = true;
     public float timeToFindAgain = 5f;
+    public bool goingToAlarm = false;
 
     public void ActBehaviours()
     {
