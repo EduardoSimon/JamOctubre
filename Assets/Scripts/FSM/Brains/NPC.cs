@@ -135,5 +135,10 @@ public class NPC : NPCStatesBehaviour
     public IEnumerator EnableFindPersonAgain(float seconds){
         yield return new WaitForSeconds(seconds);
         canDetectNPC = true;
+        talkingWithSomeone = false;
+        if (GetComponent<FindOtherPersonCondition>() != null){
+            GetComponent<FindOtherPersonCondition>().currentTarget = null;
+            talkingWithSomeone = false;
+        }
     }
 }

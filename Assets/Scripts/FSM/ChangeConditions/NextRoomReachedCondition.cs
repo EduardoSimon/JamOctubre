@@ -7,16 +7,15 @@ public class NextRoomReachedCondition : Condition
 {
     public override bool Check()
     {
-        Room room = GetComponent< GoToNextRoomSteeringBehaviour > ().nextRoom;
+        Room room = GetComponent< NPC > ().nextRoom;
 
-        if ( room != null){
+        if (room != null){
             float distance = Vector3.Distance(transform.position, room.transform.position);
             if (distance < GetComponent<NavMeshAgent>().radius * 4f){
                 GetComponent<NPC>().roomSelected = false;
                 GetComponent<NPC>().destinationFixed = false;
                 GetComponent<NPC>().currentRoom = room;
-                GetComponent<GoToNextRoomSteeringBehaviour>().nextRoom.full = false;
-                GetComponent<GoToNextRoomSteeringBehaviour>().nextRoom = null;
+                GetComponent<NPC>().nextRoom = null;
                 return true;
             }
         }
