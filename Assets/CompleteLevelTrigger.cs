@@ -39,7 +39,7 @@ public class CompleteLevelTrigger : MonoBehaviour
 			canvas.gameObject.SetActive(true);
 		}
 		
-		if (Input.GetKeyDown(KeyCode.E))
+		if (Input.GetKeyDown(KeyCode.E) && playerInside)
 		{
 			if (GameManager.I.canCompleteLevel)
 			{

@@ -2709,6 +2709,7 @@ MonoBehaviour:
   timeToFindAgain: 12
   goingToAlarm: 0
   talkingWithSomeone: 0
+  alarmEnabled: 0
 --- !u!114 &114161052476541430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2744,7 +2745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   screamingClip: {fileID: 8300000, guid: 0d3d51e68ed6d5b4093483ea53abf3d7, type: 3}
-  talkingClip: {fileID: 8300000, guid: 37b817743b20b43c18b9a03b1c2c7058, type: 3}
+  talkingClip: {fileID: 8300000, guid: cb4f6ab10c3b3fa459d876b458d1e648, type: 3}
   walkingClip: {fileID: 0}
 --- !u!114 &114416028574412672
 MonoBehaviour:
@@ -2803,7 +2804,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10c56042bcd2bb94dbb01f87c08206bf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 5
+  viewRadius: 10
   viewAngle: 35
   targetMask:
     serializedVersion: 2

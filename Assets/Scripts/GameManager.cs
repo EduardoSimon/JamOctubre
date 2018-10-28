@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,11 +39,40 @@ public class GameManager : Singleton<GameManager> {
         {
             if (scene.buildIndex == (int) SceneLoader.SCENES.Game)
                 rooms = FindObjectsOfType<Room>();
+
+            if(scene.buildIndex == (int)SceneLoader.SCENES.MenuBueno)
+            {
+                ResetGameManager();
+            }
+
         };
+
+    }
+
+    private void ResetGameManager()
+    {
+        playerDetected = false;
+        alarmEnabled = false;
+        canCompleteLevel = false;
+        levelCompleted = false;
+        HUDController.I.ResetHUD();
+    }
+
+    IEnumerator TimeElapsed()
+    {
+        while (!alarmEnabled)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(10f);
+        PlayerPrefsCustom.HasLevelEnd = true;
+        SceneManager.LoadScene((int)SceneLoader.SCENES.Score);
     }
 
     public void InitCoroutines(){
         StartCoroutine(IsLevelCompleted());
+        StartCoroutine(TimeElapsed());
+
     }
 
     IEnumerator IsPlayerDetected(){
@@ -56,11 +86,15 @@ public class GameManager : Singleton<GameManager> {
         while (!levelCompleted){
             yield return null;
         }
+        PlayerPrefsCustom.HasLevelEnd = true;
+        SceneManager.LoadScene((int)SceneLoader.SCENES.Score);
         //things when level completed
+        
     }
 
     public void SetRooms(Room[] rooms){
         this.rooms = rooms;
     }
+
 
 }

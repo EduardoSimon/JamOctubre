@@ -10,12 +10,12 @@ public class Stolable : MonoBehaviour{
 
     public void OnItemPickedUp()
     {
+        HUDController.I.UpdateScore(moneyValue);
         stolen = true;
         if (neededToComplete)
         {
             GameManager.I.canCompleteLevel = true;
         }
         this.gameObject.SetActive(false);
-        HUDController.I.UpdateScore(moneyValue);
     }
 }

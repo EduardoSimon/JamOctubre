@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerPrefsCustom : MonoBehaviour {
 
-    public bool HasLevelEnd { get; set; }
+    public static bool HasLevelEnd { get; set; }
 
     public int Score { get; private set; }
 
@@ -24,15 +24,7 @@ public class PlayerPrefsCustom : MonoBehaviour {
             }
 
             UnityEngine.PlayerPrefs.SetInt("currentScore", ScoreManager.score);
-
-            SceneManager.LoadScene((int)SceneLoader.SCENES.Score);
         }
-    }
-
-    private void OnGUI()
-    {
-        if (GUILayout.Button("End Level"))
-            HasLevelEnd = true;
     }
 
     private void LoadPlayerProgress()

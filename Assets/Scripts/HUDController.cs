@@ -1,7 +1,8 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using DG.Tweening;
-using UnityEditor.Experimental.UIElements;
+
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,8 @@ public class HUDController : Singleton<HUDController>
 	private Sequence s;
 	private Image alarmImage;
 	private AudioSource _audioSource;
+
+    private bool activatedAlarm = false;
 	
 
 	private void Awake()
@@ -29,17 +32,9 @@ public class HUDController : Singleton<HUDController>
 		alarmImage = alarmIcon.GetComponentInChildren<Image>();
 		_audioSource = GetComponent<AudioSource>();
 		s = DOTween.Sequence();
-		
-		StartHud();
-		InitializeAlarmSprites();
-	}
 
-	private void OnGUI()
-	{
-		if (GUILayout.Button("Añadir puntuacion"))
-		{
-			UpdateScore(Random.Range(20,100));
-		}
+
+		StartHud();
 	}
 
 	private void OnEnable()
@@ -60,11 +55,27 @@ public class HUDController : Singleton<HUDController>
 		}
 	}
 
-	public void InitializeAlarmSprites()
+    private void Update()
+    {
+        if (GameManager.I.alarmEnabled && !activatedAlarm)
+        {
+            InitializeAlarmSprites();
+            activatedAlarm = true;
+        }
+            
+    }
+
+    internal void ResetHUD()
+    {
+        score.text = 0.ToString();
+    }
+
+    public void InitializeAlarmSprites()
 	{
 		_audioSource.PlayOneShot(alarmClip);
 		
 		alarmImage.transform.DOShakePosition(0.5f, 5f, 40, 90f, false, true).SetLoops(-1);
+
 		s.AppendCallback(() => { alarmImages[0].enabled = true; });
 		//s.Append(alarmImages[0].transform.DOShakePosition(0.4f, 6f, 10, 90, false, true));
 		s.AppendInterval(0.1f);
@@ -100,7 +111,12 @@ public class HUDController : Singleton<HUDController>
 		score.text = scoreValue.ToString();
 		
 		_audioSource.PlayOneShot(addScoreClip);
-		ScoreManager.score = scoreValue;
+
+        if(ScoreManager.score <= scoreValue)
+        {
+            ScoreManager.score = scoreValue;
+        }
+		
 		
 		
 		//Depending on the score add next level of money

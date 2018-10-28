@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2256,7 +2256,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: 0c9e37c4ad086af478c975be27f95cc3, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e0b278c7b2a130c4e949f9f556f56e32, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3147,6 +3147,7 @@ GameObject:
   - component: {fileID: 1820053260}
   - component: {fileID: 1820053259}
   - component: {fileID: 1820053258}
+  - component: {fileID: 1820053263}
   m_Layer: 0
   m_Name: AudioManager
   m_TagString: AudioManager
@@ -3392,6 +3393,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1820053263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1820053257}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: db25ece23fb20f7488b1f24e047a9f49, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1854543585
 GameObject:
   m_ObjectHideFlags: 0
@@ -3744,7 +3756,7 @@ Prefab:
         type: 2}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 0c9e37c4ad086af478c975be27f95cc3,
+      objectReference: {fileID: 21300000, guid: e0b278c7b2a130c4e949f9f556f56e32,
         type: 3}
     - target: {fileID: 224417163469727514, guid: f52f2e9af04df5444883092c2e793329,
         type: 2}
@@ -3780,6 +3792,21 @@ Prefab:
         type: 2}
       propertyPath: m_AnchoredPosition.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422615543314752, guid: f52f2e9af04df5444883092c2e793329,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422615543314752, guid: f52f2e9af04df5444883092c2e793329,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114422615543314752, guid: f52f2e9af04df5444883092c2e793329,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f52f2e9af04df5444883092c2e793329, type: 2}

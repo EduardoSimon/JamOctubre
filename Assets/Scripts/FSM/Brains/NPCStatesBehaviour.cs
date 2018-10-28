@@ -23,6 +23,7 @@ public abstract class NPCStatesBehaviour : MonoBehaviour {
     public float timeToFindAgain = 5f;
     public bool goingToAlarm = false;
     public bool talkingWithSomeone = false;
+    public bool alarmEnabled = false;
 
     public void ActBehaviours()
     {
