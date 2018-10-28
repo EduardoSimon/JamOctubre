@@ -6,6 +6,7 @@ public class AudioManager : MonoBehaviour {
 
     private static AudioManager _audioManager;
 
+    public AudioSource inGameMusic;
     public AudioSource myFx;
     public AudioClip hoverFx;
     public AudioClip clickFx;
