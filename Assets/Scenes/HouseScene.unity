@@ -294,21 +294,6 @@ CapsuleCollider:
   m_Height: 2.27
   m_Direction: 1
   m_Center: {x: 0, y: 1.1, z: 0}
---- !u!54 &456138984
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 456138968}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &512639304
 GameObject:
   m_ObjectHideFlags: 0
@@ -477,10 +462,29 @@ Prefab:
       propertyPath: alarm
       value: 
       objectReference: {fileID: 2108842169}
-    - target: {fileID: 114933454045794626, guid: 0bf6132e1a2464f36abb507792606233,
+    - target: {fileID: 1690275901852568, guid: 0bf6132e1a2464f36abb507792606233, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114161052476541430, guid: 0bf6132e1a2464f36abb507792606233,
         type: 2}
-      propertyPath: viewRadius
-      value: 2
+      propertyPath: timeToRecolocate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114416028574412672, guid: 0bf6132e1a2464f36abb507792606233,
+        type: 2}
+      propertyPath: rotationDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064781422051550, guid: 0bf6132e1a2464f36abb507792606233,
+        type: 2}
+      propertyPath: goingToAlarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114064781422051550, guid: 0bf6132e1a2464f36abb507792606233,
+        type: 2}
+      propertyPath: timeToFindAgain
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bf6132e1a2464f36abb507792606233, type: 2}
@@ -529,6 +533,40 @@ Prefab:
       propertyPath: alarm
       value: 
       objectReference: {fileID: 2108842169}
+    - target: {fileID: 1880230759645412, guid: 44998dcf1ad3d473dab32b2258a965d2, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195919870262837524, guid: 44998dcf1ad3d473dab32b2258a965d2,
+        type: 2}
+      propertyPath: m_Speed
+      value: 8.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 195919870262837524, guid: 44998dcf1ad3d473dab32b2258a965d2,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114213875967746790, guid: 44998dcf1ad3d473dab32b2258a965d2,
+        type: 2}
+      propertyPath: timeToRecolocate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114107051109195110, guid: 44998dcf1ad3d473dab32b2258a965d2,
+        type: 2}
+      propertyPath: rotationDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114426960759678204, guid: 44998dcf1ad3d473dab32b2258a965d2,
+        type: 2}
+      propertyPath: goingToAlarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114426960759678204, guid: 44998dcf1ad3d473dab32b2258a965d2,
+        type: 2}
+      propertyPath: timeToFindAgain
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 44998dcf1ad3d473dab32b2258a965d2, type: 2}
   m_IsPrefabAsset: 0
@@ -576,6 +614,40 @@ Prefab:
       propertyPath: alarm
       value: 
       objectReference: {fileID: 2108842169}
+    - target: {fileID: 1083305148332018, guid: 1172c8b2abcef4b4e9b873533e004411, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 195975495640970642, guid: 1172c8b2abcef4b4e9b873533e004411,
+        type: 2}
+      propertyPath: m_Speed
+      value: 8.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 195975495640970642, guid: 1172c8b2abcef4b4e9b873533e004411,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114640287134464238, guid: 1172c8b2abcef4b4e9b873533e004411,
+        type: 2}
+      propertyPath: timeToRecolocate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114194998500132658, guid: 1172c8b2abcef4b4e9b873533e004411,
+        type: 2}
+      propertyPath: rotationDuration
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120830199250432, guid: 1172c8b2abcef4b4e9b873533e004411,
+        type: 2}
+      propertyPath: goingToAlarm
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114120830199250432, guid: 1172c8b2abcef4b4e9b873533e004411,
+        type: 2}
+      propertyPath: timeToFindAgain
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1172c8b2abcef4b4e9b873533e004411, type: 2}
   m_IsPrefabAsset: 0
@@ -1359,21 +1431,6 @@ CapsuleCollider:
   m_Height: 2.27
   m_Direction: 1
   m_Center: {x: 0, y: 1.1, z: 0}
---- !u!54 &950793026
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 950793010}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1001 &1197915780
 Prefab:
   m_ObjectHideFlags: 0
@@ -1784,7 +1841,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1375895965629680, guid: ec2d616c5da3fcf4f8e280f032bdaa3a, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4753776294336738, guid: ec2d616c5da3fcf4f8e280f032bdaa3a, type: 2}
       propertyPath: m_LocalScale.x
@@ -3614,39 +3671,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!1 &1991586383 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1690275901852568, guid: 0bf6132e1a2464f36abb507792606233,
-    type: 2}
-  m_PrefabInternal: {fileID: 557995199}
---- !u!136 &1991586384
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1991586383}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 2.27
-  m_Direction: 1
-  m_Center: {x: 0, y: 1.1, z: 0}
---- !u!54 &1991586399
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1991586383}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &2002113687
 GameObject:
   m_ObjectHideFlags: 0
@@ -3766,21 +3790,6 @@ CapsuleCollider:
   m_Height: 2.27
   m_Direction: 1
   m_Center: {x: 0, y: 1.1, z: 0}
---- !u!54 &2058899363
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 2058899347}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 1
-  m_IsKinematic: 0
-  m_Interpolate: 0
-  m_Constraints: 112
-  m_CollisionDetection: 0
 --- !u!1 &2108842168
 GameObject:
   m_ObjectHideFlags: 0
@@ -3803,7 +3812,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2108842168}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.85, y: 0, z: 0}
+  m_LocalPosition: {x: -3.24, y: -0.196, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 538548531}
@@ -3853,10 +3862,29 @@ Prefab:
       propertyPath: alarm
       value: 
       objectReference: {fileID: 2108842169}
+    - target: {fileID: 1472901376951998, guid: 691d7f1d9636b412f99f05d092a10d8b, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 195068856555342590, guid: 691d7f1d9636b412f99f05d092a10d8b,
         type: 2}
-      propertyPath: m_Height
-      value: 1.88
+      propertyPath: m_Speed
+      value: 8.93
+      objectReference: {fileID: 0}
+    - target: {fileID: 195068856555342590, guid: 691d7f1d9636b412f99f05d092a10d8b,
+        type: 2}
+      propertyPath: m_AngularSpeed
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 114271056181315270, guid: 691d7f1d9636b412f99f05d092a10d8b,
+        type: 2}
+      propertyPath: timeToRecolocate
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 114461111787800828, guid: 691d7f1d9636b412f99f05d092a10d8b,
+        type: 2}
+      propertyPath: goingToAlarm
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 691d7f1d9636b412f99f05d092a10d8b, type: 2}

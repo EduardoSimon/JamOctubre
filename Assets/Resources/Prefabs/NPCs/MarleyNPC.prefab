@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 114882866102025156}
   - component: {fileID: 114713611945735438}
   - component: {fileID: 114064781422051550}
+  - component: {fileID: 136974032280303508}
   m_Layer: 9
   m_Name: MarleyNPC
   m_TagString: Untagged
@@ -2189,7 +2190,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1690275901852568}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.276, y: 2.022, z: 0}
+  m_LocalPosition: {x: -8.72, y: 2.37, z: 1.55}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4472867372342820}
@@ -2612,14 +2613,15 @@ MonoBehaviour:
     cumulativeProbability: 0.5
   - roomName: 2
     probability: 0.1
-    cumulativeProbability: 0.8
+    cumulativeProbability: 0.7
   - roomName: 3
-    probability: 0.1
-    cumulativeProbability: 0.9
+    probability: 0.2
+    cumulativeProbability: 0.8
   roomSelected: 0
   destinationFixed: 0
   canDetectNPC: 1
   timeToFindAgain: 3
+  goingToAlarm: 0
 --- !u!114 &114161052476541430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2631,7 +2633,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef883e9ee6408484f868808015b57d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToRecolocate: 5
+  timeToRecolocate: 1
 --- !u!114 &114330992371059226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2742,7 +2744,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 422d0613b02b84c189142b7d314cd0d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  viewRadius: 3
+  viewRadius: 2
   targetMask:
     serializedVersion: 2
     m_Bits: 512
@@ -2750,6 +2752,19 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   currentTarget: {fileID: 0}
+--- !u!136 &136974032280303508
+CapsuleCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690275901852568}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2.27
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.1, z: 0}
 --- !u!137 &137077165681642378
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1
@@ -3259,10 +3274,10 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 3.5
+  m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 120
+  m_AngularSpeed: 1000
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

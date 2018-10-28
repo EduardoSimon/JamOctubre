@@ -17,12 +17,14 @@ public class GoToAlarmSteeringBehaviour : SteeringBehaviour {
     public override void Act()
     {
         if (!npc.goingToAlarm){
-            navMesh.SetDestination(alarm.position);
+            bool can = navMesh.SetDestination(alarm.position);
+            Debug.Log("SET DESTINATION = " + can);
             npc.goingToAlarm = true;
         }
 
         if (Vector3.Distance(this.transform.position, alarm.position) <= navMesh.radius * 4f){
             GameManager.I.alarmEnabled = true;
+            npc.goingToAlarm = false;
         }
     }
 }

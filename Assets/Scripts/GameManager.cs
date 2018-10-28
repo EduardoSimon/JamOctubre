@@ -24,7 +24,6 @@ public class GameManager : Singleton<GameManager> {
     private void Awake()
     {
         rooms = FindObjectsOfType<Room>();
-        Debug.Log("rooms has " + rooms.Length + " components. ");
     }
 
     public void Start()

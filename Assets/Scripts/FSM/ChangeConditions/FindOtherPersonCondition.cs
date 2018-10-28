@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class FindOtherPersonCondition : Condition
 {
@@ -11,11 +12,10 @@ public class FindOtherPersonCondition : Condition
 
     public override bool Check()
     {
-
+        if (!GetComponent<NPC>().canDetectNPC || currentTarget != null){
+            return false;
+        }
         return FindNPC();
-
-        //return false;
-
     }
 
     public bool FindNPC(){
@@ -26,14 +26,23 @@ public class FindOtherPersonCondition : Condition
         {
             Transform target = targetsInside[i].transform;
 
-            if (this.GetComponent<NPC>().canDetectNPC && target.GetComponent<NPC>() != null &&
-                target.GetComponent<NPC>() != this.GetComponent<NPC>()){
-                Debug.Log(this.name + " ha encontrado a " + target.name);
-                GetComponent<NPC>().canDetectNPC = false;
-                currentTarget = target;
+            if (target.GetComponent<NPC>() != null 
+                && target.GetComponent<NPC>().gameObject != this.GetComponent<NPC>().gameObject
+                && target.GetComponent<FindOtherPersonCondition>() != null 
+                && (target.GetComponent<FindOtherPersonCondition>().currentTarget == null 
+                    ||  target.GetComponent<FindOtherPersonCondition>().currentTarget == this.transform) 
+                && !this.GetComponent<NPC>().talkingWithSomeone){
+
+                Debug.Log("ENTRANDO AQUIII");
+                this.GetComponent<NPC>().canDetectNPC = false;
+                this.GetComponent<NPC>().talkingWithSomeone = true;
+                currentTarget = target.transform;
+               
+                //StartCoroutine(GetComponent<NPC>().EnableFindPersonAgain(GetComponent<NPC>().timeToFindAgain));
                 return true;
             }
         }
+
         currentTarget = null;
         return false;
     }
