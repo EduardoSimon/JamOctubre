@@ -12,6 +12,7 @@ using UnityEngine;
 [RequireComponent(typeof(StopNavMeshSteeringBehaviour))]
 [RequireComponent(typeof(GoToAlarmSteeringBehaviour))]
 [RequireComponent(typeof(NextRoomReachedCondition))]
+[RequireComponent(typeof(AudioSource))]
 
 public class NPC : NPCStatesBehaviour
 {
@@ -125,13 +126,6 @@ public class NPC : NPCStatesBehaviour
         FSMSystem.I.AddState(this, new State(STATE.None));
     }
 
-    private void OnLevelWasLoaded(int level)
-    {
-        if (level == (int)SceneLoader.SCENES.Game){
-            roomProbabilities = new List<RoomProbability>(GameManager.I.rooms.Length);
-        }
-    }
-
     private void Update()
     {
         ActBehaviours();
@@ -141,6 +135,5 @@ public class NPC : NPCStatesBehaviour
     public IEnumerator EnableFindPersonAgain(float seconds){
         yield return new WaitForSeconds(seconds);
         canDetectNPC = true;
-        Debug.Log(this.name + "can find NPC again!");
     }
 }

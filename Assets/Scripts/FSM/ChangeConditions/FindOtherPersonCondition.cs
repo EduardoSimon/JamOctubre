@@ -27,14 +27,14 @@ public class FindOtherPersonCondition : Condition
             Transform target = targetsInside[i].transform;
 
             if (this.GetComponent<NPC>().canDetectNPC && target.GetComponent<NPC>() != null &&
-                target.GetComponent<NPC>() != this.GetComponent<NPC>() && target.GetComponent<NPC>().canDetectNPC){
+                target.GetComponent<NPC>() != this.GetComponent<NPC>()){
                 Debug.Log(this.name + " ha encontrado a " + target.name);
                 GetComponent<NPC>().canDetectNPC = false;
                 currentTarget = target;
-                target.GetComponent<NPC>().canDetectNPC = false;
                 return true;
             }
         }
+        currentTarget = null;
         return false;
     }
 

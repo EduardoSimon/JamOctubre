@@ -36,24 +36,16 @@ public class GoToNextRoomSteeringBehaviour : SteeringBehaviour
             GetNewRoom();
 
             if (npc.currentRoom != null && npc.currentRoom != nextRoom){
-                while (npc.currentRoom == nextRoom || nextRoom.full){
+                while (npc.currentRoom == nextRoom){
                     GetNewRoom();
                 }
-                npc.currentRoom.full = true;
-
             }
-
-            nextRoom.full = true;
             npc.roomSelected = true;
 
         }
         else{
             navMesh.isStopped = false;
             if (!npc.destinationFixed){
-                //navMesh.isStopped = false;
-                if (npc.currentRoom != null){
-                    npc.currentRoom.full = false;
-                }
                 navMesh.SetDestination(nextRoom.transform.position);
                 npc.destinationFixed = true;
             }
