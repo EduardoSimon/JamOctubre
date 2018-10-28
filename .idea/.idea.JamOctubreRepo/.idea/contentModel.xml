@@ -5,9 +5,12 @@
     <e p="C:\Users\edu97\.Rider2018.2\system\resharper-host\Local\Transient\ReSharperHost\v182\SolutionCaches\_JamOctubreRepo.1333544009.00" t="ExcludeRecursive" />
     <e p="D:\Unity\JamOctubreRepo" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="CameraFacingBillboard.cs" t="Include" />
+        <e p="CameraFollow.cs" t="Include" />
         <e p="Demigiant" t="Include">
           <e p="DOTween" t="Include">
             <e p="Modules" t="Include">
@@ -20,6 +23,19 @@
               <e p="DOTweenModuleUtils.cs" t="Include" />
             </e>
             <e p="README.txt" t="Include" />
+          </e>
+        </e>
+        <e p="Isometric Camera Controller" t="Include">
+          <e p="How to use" t="Include">
+            <e p="HowToUse.txt" t="Include" />
+          </e>
+          <e p="Scripts" t="Include">
+            <e p="Editor" t="Include">
+              <e p="Jims_CameraControllerEditor.cs" t="Include" />
+              <e p="Jims_CameraProfileEditor.cs" t="Include" />
+            </e>
+            <e p="Jims_CameraController.cs" t="Include" />
+            <e p="Jims_CameraControllerProfile.cs" t="Include" />
           </e>
         </e>
         <e p="Plugins" t="Include">
@@ -229,6 +245,7 @@
             </e>
           </e>
         </e>
+        <e p="PrintAwake.cs" t="Include" />
         <e p="Scripts" t="Include">
           <e p="Core" t="Include">
             <e p="Jewell" t="Include">
