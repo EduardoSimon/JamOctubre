@@ -5,11 +5,16 @@ using UnityEngine;
 public class Stolable : MonoBehaviour{
 
     public int moneyValue;
-    public bool enableAlarm;
     public bool neededToComplete; //strongbox
+    public bool stolen = false;
 
     public void OnItemPickedUp()
     {
+        stolen = true;
+        if (neededToComplete)
+        {
+            GameManager.I.canCompleteLevel = true;
+        }
         this.gameObject.SetActive(false);
         HUDController.I.UpdateScore(moneyValue);
     }

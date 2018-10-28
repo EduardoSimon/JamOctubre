@@ -20,6 +20,7 @@ public class GameManager : Singleton<GameManager> {
     public bool playerDetected;
     public bool alarmEnabled;
     public bool levelCompleted;
+    public bool canCompleteLevel;
 
     private void Awake()
     {
