@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using DG.Tweening;
 using UnityEngine;
+using UnityEngine.Experimental.UIElements;
 
 public class PlayerController : Singleton<PlayerController> {
 
@@ -52,7 +53,8 @@ public class PlayerController : Singleton<PlayerController> {
             if (inputDir != Vector2.zero)
             {
                 float targetRotation = Mathf.Atan2(inputDir.x, inputDir.y) * Mathf.Rad2Deg;
-                transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation, ref turnSmoothVelocity, turnSmoothTime);
+                transform.eulerAngles = Vector3.up * Mathf.SmoothDampAngle(transform.eulerAngles.y, targetRotation,
+                                            ref turnSmoothVelocity, turnSmoothTime);
             }
 
             bool running = Input.GetKey(KeyCode.LeftShift);
