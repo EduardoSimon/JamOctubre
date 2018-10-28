@@ -17,6 +17,7 @@ public class GoToAlarmSteeringBehaviour : SteeringBehaviour {
     public override void Act()
     {
         if (!npc.goingToAlarm){
+            navMesh.isStopped = false;
             bool can = navMesh.SetDestination(alarm.position);
             Debug.Log("SET DESTINATION = " + can);
             npc.goingToAlarm = true;

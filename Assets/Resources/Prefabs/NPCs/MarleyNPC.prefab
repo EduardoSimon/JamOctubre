@@ -892,6 +892,9 @@ GameObject:
   - component: {fileID: 114713611945735438}
   - component: {fileID: 114064781422051550}
   - component: {fileID: 136974032280303508}
+  - component: {fileID: 114950331489560068}
+  - component: {fileID: 114049208255717808}
+  - component: {fileID: 114378315443494270}
   m_Layer: 9
   m_Name: MarleyNPC
   m_TagString: Untagged
@@ -2571,7 +2574,7 @@ Animator:
   m_GameObject: {fileID: 1690275901852568}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 9129b6eada6224d88aade1814b7f225e, type: 3}
-  m_Controller: {fileID: 9100000, guid: b962fe822c1414da1871d24f94048438, type: 2}
+  m_Controller: {fileID: 9100000, guid: d0dbc189462d84322b78a42ab6bacde1, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2580,6 +2583,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &114049208255717808
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690275901852568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83d547ebf7174df587b9024b8737dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSpeed: 0
+  walkSpeed: 5
+  runSpeed: 10
+  parameterName: Blend
 --- !u!114 &114064781422051550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2598,6 +2616,7 @@ MonoBehaviour:
     behaviours: []
   currentTransitions: []
   currentRoom: {fileID: 0}
+  nextRoom: {fileID: 0}
   roomProbabilities:
   - roomName: 0
     probability: 0.3
@@ -2620,8 +2639,9 @@ MonoBehaviour:
   roomSelected: 0
   destinationFixed: 0
   canDetectNPC: 1
-  timeToFindAgain: 3
+  timeToFindAgain: 12
   goingToAlarm: 0
+  talkingWithSomeone: 0
 --- !u!114 &114161052476541430
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2633,7 +2653,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef883e9ee6408484f868808015b57d7a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeToRecolocate: 1
+  timeToRecolocate: 5
 --- !u!114 &114330992371059226
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2645,6 +2665,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0273973b905214bf2820fd3e2fbcf87b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114378315443494270
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690275901852568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ca6afe75d3da49429213c6175bdf48c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screamingClip: {fileID: 8300000, guid: 0d3d51e68ed6d5b4093483ea53abf3d7, type: 3}
+  talkingClip: {fileID: 8300000, guid: 37b817743b20b43c18b9a03b1c2c7058, type: 3}
+  walkingClip: {fileID: 0}
 --- !u!114 &114416028574412672
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2656,7 +2690,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2cd80e705a5f94998bdd44b7f04b62de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rotationDuration: 1.5
+  rotationDuration: 0.5
 --- !u!114 &114489773227871748
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2721,7 +2755,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be99b2eb21554bb2aa5729f6f3fb5a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextRoom: {fileID: 0}
 --- !u!114 &114890288099040998
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2752,6 +2785,21 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 2048
   currentTarget: {fileID: 0}
+--- !u!114 &114950331489560068
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1690275901852568}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f83d547ebf7174df587b9024b8737dd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  idleSpeed: 0
+  walkSpeed: 5
+  runSpeed: 10
+  parameterName: Blend
 --- !u!136 &136974032280303508
 CapsuleCollider:
   m_ObjectHideFlags: 1
@@ -3277,7 +3325,7 @@ NavMeshAgent:
   m_Speed: 4
   m_Acceleration: 8
   avoidancePriority: 50
-  m_AngularSpeed: 1000
+  m_AngularSpeed: 1500
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

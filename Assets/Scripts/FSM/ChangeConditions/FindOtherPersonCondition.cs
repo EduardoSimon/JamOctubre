@@ -33,12 +33,12 @@ public class FindOtherPersonCondition : Condition
                     ||  target.GetComponent<FindOtherPersonCondition>().currentTarget == this.transform) 
                 && !this.GetComponent<NPC>().talkingWithSomeone){
 
-                Debug.Log("ENTRANDO AQUIII");
                 this.GetComponent<NPC>().canDetectNPC = false;
                 this.GetComponent<NPC>().talkingWithSomeone = true;
                 currentTarget = target.transform;
-               
+
                 //StartCoroutine(GetComponent<NPC>().EnableFindPersonAgain(GetComponent<NPC>().timeToFindAgain));
+                GetComponent<NPCSoundController>().PlaySoundTalking();
                 return true;
             }
         }
